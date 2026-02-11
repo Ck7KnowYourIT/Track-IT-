@@ -3,31 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kritikalitäts-Matrix</title>
+  <title>Kritikalitäts-Matrix – Track-IT</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f4f6f9;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 22px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    .matrix-preview {
+      background: white;
+      padding: 15px;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .matrix-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 22px; }
+    }
+  </style>
 </head>
 
-<body style="margin:0; font-family:Arial, sans-serif; background:#fff;">
+<body>
 
-  <!-- Kopf / Aktion -->
-  <div style="padding:14px 16px; text-align:center; border-bottom:1px solid #ddd;">
-    <h1 style="margin:0 0 10px 0; font-size:22px;">Kritikalitäts-Matrix</h1>
-    <a
-      href="Kritikalitäts_Matrix_ck7_TrackIT.pdf"
-      target="_blank"
-      rel="noopener"
-      style="display:inline-block; padding:10px 16px; border:1px solid #333; border-radius:8px; text-decoration:none; color:#000;"
-    >
-      PDF öffnen / drucken
+  <div class="container">
+    
+    <h1>Kritikalitäts-Matrix</h1>
+    <div class="subtext">
+      Nutzen Sie die Matrix zur strukturierten Priorisierung Ihrer IT-Störungen.
+    </div>
+
+    <a class="button"
+       href="Kritikalitäts_Matrix_ck7_TrackIT.pdf"
+       target="_blank"
+       rel="noopener">
+       PDF-Druckversion öffnen
     </a>
-  </div>
 
-  <!-- Vorschau -->
-  <div style="padding:16px;">
-    <img
-      src="Kritikalitäts_Matrix_TrackIT.png"
-      alt="Kritikalitäts-Matrix Vorschau"
-      style="width:100%; height:auto; display:block; max-width:1400px; margin:0 auto;"
-    >
+    <div class="matrix-preview">
+      <img src="Kritikalitäts_Matrix_TrackIT.png"
+           alt="Vorschau der Kritikalitäts-Matrix">
+    </div>
+
+    <div class="footer-note">
+      Für optimale Druckqualität bitte die PDF-Version verwenden.
+    </div>
+
   </div>
 
 </body>
