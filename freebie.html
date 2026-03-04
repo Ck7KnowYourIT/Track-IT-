@@ -1,92 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Freebie | CK7 #KnowYourIT</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2f;
+      --card2:#0c1629;
+      --stroke:rgba(255,255,255,.10);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.75);
+      --muted2:rgba(255,255,255,.55);
+      --accent:#22c55e;
+      --accent2:#60a5fa;
+      --btn:#ffffff;
+      --btnText:#0b1220;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
 
-<title>Track-IT Freebie | CK7</title>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.16), transparent 55%),
+        radial-gradient(900px 500px at 50% 90%, rgba(168,85,247,.12), transparent 60%),
+        linear-gradient(180deg, #081022 0%, var(--bg) 60%, #070d1a 100%);
+      min-height:100vh;
+    }
 
-<style>
-body {
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:linear-gradient(135deg,#1f2937,#374151);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  text-align:center;
-}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
-.container{
-  background:rgba(255,255,255,0.05);
-  padding:40px;
-  border-radius:12px;
-  backdrop-filter:blur(6px);
-  max-width:520px;
-}
+    /* Top nav */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      background:rgba(8,16,34,.72);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:10px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .nav{
+      display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+    }
+    .logo{
+      width:26px;height:26px;border-radius:8px;
+      background:linear-gradient(135deg, rgba(96,165,250,.9), rgba(34,197,94,.85));
+    }
+    .brand b{letter-spacing:.2px}
+    .spacer{flex:1}
 
-h1{
-  margin-top:0;
-  font-size:28px;
-}
+    .tab{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      font-size:14px;
+      transition:.15s ease;
+      white-space:nowrap;
+    }
+    .tab:hover{background:rgba(255,255,255,.06)}
+    .tab.active{
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.18);
+    }
 
-p{
-  color:#d1d5db;
-  margin-bottom:30px;
-}
+    /* Page layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .spacer{display:none}
+    }
 
-.button{
-  display:inline-block;
-  padding:14px 28px;
-  font-size:16px;
-  font-weight:600;
-  text-decoration:none;
-  border-radius:8px;
-  background:#ffffff;
-  color:#111827;
-  transition:0.2s ease;
-}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+    }
 
-.button:hover{
-  background:#e5e7eb;
-}
+    .hero h1{
+      margin:0 0 10px 0;
+      font-size:38px;
+      line-height:1.05;
+      letter-spacing:-.3px;
+    }
+    .hero p{margin:0 0 18px 0; color:var(--muted); font-size:16px; line-height:1.5}
 
-.footer{
-  margin-top:25px;
-  font-size:13px;
-  color:#9ca3af;
-}
-</style>
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px 0}
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      color:var(--muted);
+      background:rgba(255,255,255,.04);
+      font-size:13px;
+      display:inline-flex; gap:8px; align-items:center;
+    }
+
+    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:12px;
+      font-weight:800;text-decoration:none;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.15s ease;
+    }
+    .btn.primary{background:var(--btn);color:var(--btnText);border-color:transparent}
+    .btn.primary:hover{filter:brightness(.96)}
+    .btn.ghost{background:rgba(255,255,255,.03);color:var(--text)}
+    .btn.ghost:hover{background:rgba(255,255,255,.06)}
+
+    .mini{
+      margin-top:14px;color:var(--muted2);font-size:13px;line-height:1.45
+    }
+
+    /* Right card */
+    .side h3{margin:0 0 10px 0;font-size:16px}
+    .side ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
+    .side .box{
+      margin-top:14px;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.18);
+    }
+    .side .box b{display:block;margin-bottom:6px}
+    .footer{
+      margin:22px 0 10px 0;
+      color:var(--muted2);
+      font-size:12px;
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <!-- Top navigation -->
+    <div class="topbar">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <b>CK7 #KnowYourIT</b>
+        </div>
 
-<div class="container">
+        <div class="spacer"></div>
 
-<h1>Track-IT Freebie</h1>
+        <a class="tab" href="./index.html">Start</a>
+        <a class="tab active" href="./freebie.html">Freebie</a>
+        <a class="tab" href="./Kritikalitätsmatrix.html">Matrix</a>
+        <a class="tab" href="./video.html">Video</a>
+        <a class="tab" href="PASTE_BOOKINGS_LINK_HERE" target="_blank" rel="noopener">Termin buchen</a>
+      </div>
+    </div>
 
-<p>
-Von <b>50+ ungeordneten IT-Störungen</b>  
-zu <b>klarer Steuerbarkeit in 2 Stunden</b>.
-<br><br>
-Ein Entscheidungsframework für Geschäftsführer und IT-Leiter.
-</p>
+    <!-- Content -->
+    <div class="grid">
+      <div class="card hero">
+        <h1>Track-IT Freebie</h1>
+        <p>
+          Von <b>50+ ungeordneten IT-Störungen</b> zu <b>klarer Steuerbarkeit</b> in kurzer Zeit.
+          Das PDF ist sofort nutzbar – ohne Tool-Wechsel.
+        </p>
 
-<a class="button"
-href="Freebie%20-%20TrackIt!%20V3.pdf"
-target="_blank">
+        <div class="pillrow">
+          <div class="pill">⏱️ 10 Min Lesezeit</div>
+          <div class="pill">📌 Praxisorientiert</div>
+          <div class="pill">✅ Kostenlos</div>
+        </div>
 
-Freebie öffnen
+        <div class="ctaRow">
+          <a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">
+            📄 Freebie als PDF öffnen
+          </a>
+          <a class="btn ghost" href="./Kritikalitätsmatrix.html">
+            🧩 Zur Kritikalitäts-Matrix
+          </a>
+        </div>
 
-</a>
+        <div class="ctaRow">
+          <a class="btn ghost" href="./video.html">🎥 3-Minuten Video ansehen</a>
+          <a class="btn ghost" href="PASTE_BOOKINGS_LINK_HERE" target="_blank" rel="noopener">
+            📅 Transparenz-Check buchen
+          </a>
+        </div>
 
-<div class="footer">
-© CK7 #KnowYourIT
-</div>
+        <div class="mini">
+          Tipp: Für eure Kampagnen nutzt ihr als Link/QR am besten <b>/freebie.html</b> statt direkt das PDF.
+        </div>
+      </div>
 
-</div>
+      <div class="card side">
+        <h3>Was du bekommst</h3>
+        <ul>
+          <li>Struktur, um Störungen sauber einzuordnen</li>
+          <li>Priorisierung nach Business-Impact & Dringlichkeit</li>
+          <li>Konkrete nächste Schritte für schnelle Steuerbarkeit</li>
+        </ul>
 
+        <div class="box">
+          <b>Direkt im Anschluss:</b>
+          Wenn du willst, gehen wir gemeinsam 30 Minuten durch eure aktuelle Situation – ohne Verkaufsgespräch.
+        </div>
+
+        <div class="ctaRow" style="margin-top:14px">
+          <a class="btn primary" href="PASTE_BOOKINGS_LINK_HERE" target="_blank" rel="noopener">
+            📅 Termin buchen
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© CK7 #KnowYourIT</div>
+  </div>
 </body>
 </html>
