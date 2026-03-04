@@ -7,56 +7,51 @@
 
   <style>
     :root{
-      --bg:#0b1220;
-      --stroke:rgba(255,255,255,.10);
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.75);
-      --muted2:rgba(255,255,255,.55);
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --bg1:#f8fafc;
+      --bg2:#eef2ff;
+      --card:#ffffff;
+      --stroke:rgba(15,23,42,.10);
+      --text:#0f172a;
+      --muted:rgba(15,23,42,.70);
+      --muted2:rgba(15,23,42,.55);
+      --shadow:0 18px 45px rgba(2,6,23,.12);
       --radius:18px;
+      --cta:#0f172a;
+      --ctaText:#ffffff;
     }
 
     *{box-sizing:border-box}
-
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.16), transparent 55%),
-        radial-gradient(900px 500px at 50% 90%, rgba(168,85,247,.12), transparent 60%),
-        linear-gradient(180deg, #081022 0%, var(--bg) 60%, #070d1a 100%);
+        radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
       min-height:100vh;
     }
 
     .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
-    /* Top nav (same as freebie.html) */
     .topbar{
       position:sticky; top:0; z-index:20;
-      background:rgba(8,16,34,.72);
+      background:rgba(255,255,255,.72);
       backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(15,23,42,.10);
       border-radius:999px;
       padding:10px 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      box-shadow: 0 10px 26px rgba(2,6,23,.10);
     }
-    .nav{
-      display:flex; align-items:center; gap:10px;
-      flex-wrap:wrap;
-    }
+    .nav{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
     .brand{
       display:flex; align-items:center; gap:10px;
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
     }
-    .logo{
-      width:26px;height:26px;border-radius:8px;
-      background:linear-gradient(135deg, rgba(96,165,250,.9), rgba(34,197,94,.85));
-    }
+    .brandLogo{height:26px;width:auto;display:block}
     .brand b{letter-spacing:.2px}
     .spacer{flex:1}
 
@@ -64,8 +59,8 @@
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.50);
       color:var(--text);
       text-decoration:none;
       font-weight:650;
@@ -73,89 +68,76 @@
       transition:.15s ease;
       white-space:nowrap;
     }
-    .tab:hover{background:rgba(255,255,255,.06)}
+    .tab:hover{background:rgba(15,23,42,.04)}
     .tab.active{
-      background:rgba(255,255,255,.12);
-      border-color:rgba(255,255,255,.18);
+      background:rgba(15,23,42,.10);
+      border-color:rgba(15,23,42,.16);
     }
 
-    /* Page layout */
-    .wrapper{
+    .center{
       display:flex;
       align-items:center;
       justify-content:center;
       min-height:calc(100vh - 120px);
-      text-align:center;
       padding:18px 0;
+      text-align:center;
     }
 
-    .container{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    .card{
+      background:rgba(255,255,255,.78);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      padding:40px;
+      padding:28px;
       box-shadow: var(--shadow);
-      max-width:560px;
+      max-width:640px;
       width:100%;
     }
 
     h1{
-      margin:0 0 14px 0;
-      font-size:30px;
+      margin:0 0 10px 0;
+      font-size:28px;
       letter-spacing:-.2px;
-      line-height:1.15;
     }
 
     p{
+      margin:0 0 18px 0;
       color:var(--muted);
-      margin:0 0 26px 0;
-      line-height:1.6;
+      line-height:1.55;
     }
 
-    .button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 28px;
-      font-size:16px;
-      font-weight:900;
-      text-decoration:none;
-      border-radius:12px;
-      background:#ffffff;
-      color:#0b1220;
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:12px;
+      font-weight:900;text-decoration:none;
+      border:1px solid rgba(15,23,42,.10);
       transition:.15s ease;
-      border:1px solid transparent;
-      box-shadow:0 10px 25px rgba(0,0,0,.35);
+      white-space:nowrap;
+      background:var(--cta);
+      color:var(--ctaText);
+      border-color:transparent;
+      box-shadow:0 12px 28px rgba(2,6,23,.18);
     }
-    .button:hover{
-      filter:brightness(.96);
-      transform:translateY(-1px);
-      box-shadow:0 14px 35px rgba(0,0,0,.45);
-    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(.98)}
 
     .footer{
-      margin-top:22px;
-      font-size:12px;
+      margin-top:14px;
       color:var(--muted2);
+      font-size:12px;
     }
 
     @media (max-width: 900px){
       .spacer{display:none}
-      .container{padding:28px}
-      h1{font-size:26px}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
-    <!-- Top navigation -->
     <div class="topbar">
       <div class="nav">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <b>CK7 #KnowYourIT</b>
+          <img class="brandLogo" src="CK7Logo.png" alt="CK7 Logo">
+          <b>#KnowYourIT</b>
         </div>
 
         <div class="spacer"></div>
@@ -168,24 +150,22 @@
       </div>
     </div>
 
-    <div class="wrapper">
-      <div class="container">
+    <div class="center">
+      <div class="card">
         <h1>Track-It! Kritikalitäts-Bewertungsmatrix</h1>
-
         <p>
           Vielen Dank für Ihr Interesse an unserem kostenlosen Track-It! Freebie.<br>
           Zur systematischen Einordnung und Priorisierung von IT-Störungen
           nach Nutzerbetroffenheit, Geschäftsimpact und Dringlichkeit.
         </p>
 
-        <a class="button" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">
-          Kritikalitätsmatrix öffnen
+        <a class="btn" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">
+          🧩 Kritikalitätsmatrix öffnen
         </a>
 
         <div class="footer">© CK7 #KnowYourIT</div>
       </div>
     </div>
-
   </div>
 </body>
 </html>
