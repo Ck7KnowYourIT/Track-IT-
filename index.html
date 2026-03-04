@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -7,110 +7,208 @@
 <title>Track-IT | CK7 #KnowYourIT</title>
 
 <style>
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    color:#ffffff;
-  }
 
-  /* Navigation */
-  .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:rgba(0,0,0,0.25);
-    backdrop-filter:blur(8px);
-  }
+:root{
+--bg:#0b1220;
+--stroke:rgba(255,255,255,.10);
+--text:#ffffff;
+--muted:rgba(255,255,255,.75);
+--muted2:rgba(255,255,255,.55);
+--shadow:0 20px 60px rgba(0,0,0,.45);
+--radius:18px;
+}
 
-  .navbar a{
-    color:#ffffff;
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:600;
-    font-size:15px;
-    opacity:0.9;
-  }
+*{box-sizing:border-box}
 
-  .navbar a:hover{
-    opacity:1;
-  }
+body{
+margin:0;
+font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+color:var(--text);
+background:
+radial-gradient(900px 500px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
+radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.16), transparent 55%),
+radial-gradient(900px 500px at 50% 90%, rgba(168,85,247,.12), transparent 60%),
+linear-gradient(180deg,#081022 0%,var(--bg) 60%,#070d1a 100%);
+min-height:100vh;
+}
 
-  /* Hero Section */
-  .hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:140px 20px 80px 20px;
-  }
+.wrap{
+max-width:1100px;
+margin:0 auto;
+padding:22px;
+}
 
-  .hero h1{
-    font-size:44px;
-    margin-bottom:18px;
-  }
+/* TOP NAV */
 
-  .hero p{
-    font-size:18px;
-    max-width:640px;
-    opacity:0.75;
-    line-height:1.5;
-  }
+.topbar{
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(8,16,34,.72);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:999px;
+padding:10px 12px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
 
-  .button{
-    display:inline-block;
-    margin-top:35px;
-    padding:16px 30px;
-    background:#ffffff;
-    color:#0f172a;
-    border-radius:8px;
-    font-weight:700;
-    text-decoration:none;
-    transition:0.2s;
-  }
+.nav{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
 
-  .button:hover{
-    background:#e5e7eb;
-  }
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+padding:6px 10px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.10);
+background:rgba(255,255,255,.04);
+}
 
-  /* Footer */
-  .footer{
-    margin-top:140px;
-    text-align:center;
-    font-size:13px;
-    opacity:0.5;
-    padding-bottom:30px;
-  }
+.logo{
+width:26px;
+height:26px;
+border-radius:8px;
+background:linear-gradient(135deg, rgba(96,165,250,.9), rgba(34,197,94,.85));
+}
+
+.brand b{letter-spacing:.2px}
+
+.spacer{flex:1}
+
+.tab{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:10px 12px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.10);
+background:rgba(255,255,255,.02);
+color:var(--text);
+text-decoration:none;
+font-weight:650;
+font-size:14px;
+transition:.15s ease;
+white-space:nowrap;
+}
+
+.tab:hover{
+background:rgba(255,255,255,.06);
+}
+
+.tab.active{
+background:rgba(255,255,255,.12);
+border-color:rgba(255,255,255,.18);
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:140px 20px 80px 20px;
+}
+
+.hero h1{
+font-size:44px;
+margin-bottom:18px;
+letter-spacing:-.4px;
+}
+
+.hero p{
+font-size:18px;
+max-width:640px;
+color:var(--muted);
+line-height:1.5;
+}
+
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+margin-top:35px;
+padding:16px 30px;
+background:#ffffff;
+color:#0b1220;
+border-radius:12px;
+font-weight:900;
+text-decoration:none;
+transition:.15s ease;
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.button:hover{
+filter:brightness(.96);
+transform:translateY(-1px);
+box-shadow:0 14px 35px rgba(0,0,0,.45);
+}
+
+.footer{
+margin-top:140px;
+text-align:center;
+font-size:12px;
+color:var(--muted2);
+padding-bottom:30px;
+}
+
+@media (max-width:900px){
+.spacer{display:none}
+.hero h1{font-size:36px}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-  <div><strong>CK7 #KnowYourIT</strong></div>
+<div class="wrap">
 
-  <div>
-    <a href="freebie.html">Freebie</a>
-    <a href="Kritikalitätsmatrix.html">Matrix</a>
-    <a href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">PDF</a>
-    <a href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">Termin buchen</a>
-  </div>
+<!-- NAVBAR -->
+
+<div class="topbar">
+<div class="nav">
+
+<div class="brand">
+<div class="logo"></div>
+<b>CK7 #KnowYourIT</b>
 </div>
 
+<div class="spacer"></div>
+
+<a class="tab active" href="./index.html">Start</a>
+<a class="tab" href="./freebie.html">Freebie</a>
+<a class="tab" href="./Kritikalitätsmatrix.html">Matrix</a>
+<a class="tab" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">PDF</a>
+<a class="tab" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank">Termin buchen</a>
+
+</div>
+</div>
+
+<!-- HERO -->
+
 <div class="hero">
-  <h1>Track-IT Ressourcen</h1>
 
-  <p>
-    Kostenloses Material zur Strukturierung, Bewertung und Priorisierung von IT-Störungen.
-    Ideal für IT-Leiter, Geschäftsführer und Verantwortliche, die mehr Transparenz in ihre IT bringen wollen.
-  </p>
+<h1>Track-IT Ressourcen</h1>
 
-  <a class="button" href="freebie.html">Freebie ansehen</a>
+<p>
+Kostenloses Material zur Strukturierung, Bewertung und Priorisierung von IT-Störungen.
+Ideal für IT-Leiter, Geschäftsführer und Verantwortliche, die mehr Transparenz in ihre IT bringen wollen.
+</p>
+
+<a class="button" href="freebie.html">Freebie ansehen</a>
+
 </div>
 
 <div class="footer">© CK7 #KnowYourIT</div>
+
+</div>
 
 </body>
 </html>
