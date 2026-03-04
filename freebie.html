@@ -4,21 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Freebie | CK7 #KnowYourIT</title>
+
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a2f;
-      --card2:#0c1629;
-      --stroke:rgba(255,255,255,.10);
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.75);
-      --muted2:rgba(255,255,255,.55);
-      --accent:#22c55e;
-      --accent2:#60a5fa;
-      --btn:#ffffff;
-      --btnText:#0b1220;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --bg1:#f8fafc;
+      --bg2:#eef2ff;
+      --card:#ffffff;
+      --stroke:rgba(15,23,42,.10);
+      --text:#0f172a;
+      --muted:rgba(15,23,42,.70);
+      --muted2:rgba(15,23,42,.55);
+      --shadow:0 18px 45px rgba(2,6,23,.12);
       --radius:18px;
+      --cta:#0f172a;
+      --ctaText:#ffffff;
     }
 
     *{box-sizing:border-box}
@@ -27,39 +26,36 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 20% 10%, rgba(96,165,250,.20), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.16), transparent 55%),
-        radial-gradient(900px 500px at 50% 90%, rgba(168,85,247,.12), transparent 60%),
-        linear-gradient(180deg, #081022 0%, var(--bg) 60%, #070d1a 100%);
+        radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
       min-height:100vh;
     }
 
     .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
-    /* Top nav */
+    /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:20;
-      background:rgba(8,16,34,.72);
+      background:rgba(255,255,255,.72);
       backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(15,23,42,.10);
       border-radius:999px;
       padding:10px 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      box-shadow: 0 10px 26px rgba(2,6,23,.10);
     }
-    .nav{
-      display:flex; align-items:center; gap:10px;
-      flex-wrap:wrap;
-    }
+    .nav{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
     .brand{
       display:flex; align-items:center; gap:10px;
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
     }
-    .logo{
-      width:26px;height:26px;border-radius:8px;
-      background:linear-gradient(135deg, rgba(96,165,250,.9), rgba(34,197,94,.85));
+    .brandLogo{
+      height:26px;
+      width:auto;
+      display:block;
     }
     .brand b{letter-spacing:.2px}
     .spacer{flex:1}
@@ -68,8 +64,8 @@
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.50);
       color:var(--text);
       text-decoration:none;
       font-weight:650;
@@ -77,13 +73,13 @@
       transition:.15s ease;
       white-space:nowrap;
     }
-    .tab:hover{background:rgba(255,255,255,.06)}
+    .tab:hover{background:rgba(15,23,42,.04)}
     .tab.active{
-      background:rgba(255,255,255,.12);
-      border-color:rgba(255,255,255,.18);
+      background:rgba(15,23,42,.10);
+      border-color:rgba(15,23,42,.16);
     }
 
-    /* Page layout */
+    /* Layout */
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -96,7 +92,7 @@
     }
 
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background:rgba(255,255,255,.75);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       padding:22px;
@@ -115,9 +111,9 @@
     .pill{
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(15,23,42,.10);
       color:var(--muted);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.7);
       font-size:13px;
       display:inline-flex; gap:8px; align-items:center;
     }
@@ -126,39 +122,34 @@
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 14px;border-radius:12px;
-      font-weight:800;text-decoration:none;
-      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;text-decoration:none;
+      border:1px solid rgba(15,23,42,.10);
       transition:.15s ease;
+      white-space:nowrap;
     }
     .btn.primary{
-  background:#ffffff;
-  color:#0b1220;
-  border-color:transparent;
-  font-weight:900;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-    .btn.primary:hover{
-  transform:translateY(-1px);
-  box-shadow:0 14px 35px rgba(0,0,0,.45);
-}
-    .btn.ghost{background:rgba(255,255,255,.03);color:var(--text)}
-    .btn.ghost:hover{background:rgba(255,255,255,.06)}
-
-    .mini{
-      margin-top:14px;color:var(--muted2);font-size:13px;line-height:1.45
+      background:var(--cta);
+      color:var(--ctaText);
+      border-color:transparent;
+      box-shadow:0 12px 28px rgba(2,6,23,.18);
     }
+    .btn.primary:hover{transform:translateY(-1px); filter:brightness(.98)}
+    .btn.ghost{background:rgba(255,255,255,.7);color:var(--text)}
+    .btn.ghost:hover{background:rgba(15,23,42,.04)}
 
-    /* Right card */
+    .mini{margin-top:14px;color:var(--muted2);font-size:13px;line-height:1.45}
+
     .side h3{margin:0 0 10px 0;font-size:16px}
     .side ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
     .side .box{
       margin-top:14px;
       padding:14px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.18);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
     }
     .side .box b{display:block;margin-bottom:6px}
+
     .footer{
       margin:22px 0 10px 0;
       color:var(--muted2);
@@ -170,12 +161,11 @@
 
 <body>
   <div class="wrap">
-    <!-- Top navigation -->
     <div class="topbar">
       <div class="nav">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <b>CK7 #KnowYourIT</b>
+          <img class="brandLogo" src="CK7Logo.png" alt="CK7 Logo">
+          <b>#KnowYourIT</b>
         </div>
 
         <div class="spacer"></div>
@@ -183,11 +173,11 @@
         <a class="tab" href="./index.html">Start</a>
         <a class="tab active" href="./freebie.html">Freebie</a>
         <a class="tab" href="./Kritikalitätsmatrix.html">Matrix</a>
-        <a class="tab" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Termin buchen</a>
+        <a class="tab" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">PDF</a>
+        <a class="tab" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">Termin buchen</a>
       </div>
     </div>
 
-    <!-- Content -->
     <div class="grid">
       <div class="card hero">
         <h1>Track-IT Freebie</h1>
@@ -197,25 +187,22 @@
         </p>
 
         <div class="pillrow">
-          <div class="pill"> 10 Min Lesezeit</div>
-          <div class="pill"> Praxisorientiert</div>
-          <div class="pill"> Kostenlos</div>
+          <div class="pill">⏱️ 10 Min Lesezeit</div>
+          <div class="pill">📌 Praxisorientiert</div>
+          <div class="pill">✅ Kostenlos</div>
         </div>
 
         <div class="ctaRow">
           <a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">
-            Freebie als PDF öffnen
+            📄 Freebie als PDF öffnen
           </a>
           <a class="btn ghost" href="./Kritikalitätsmatrix.html">
-            Zur Kritikalitäts-Matrix
+            🧩 Zur Kritikalitäts-Matrix
+          </a>
+          <a class="btn ghost" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">
+            📅 Transparenz-Check buchen
           </a>
         </div>
-
-       <div class="ctaRow">
-      <a class="btn ghost" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">
-           📅 Transparenz-Check buchen
-     </a>
-      </div>
 
         <div class="mini">
           Tipp: Für eure Kampagnen nutzt ihr als Link/QR am besten <b>/freebie.html</b> statt direkt das PDF.
@@ -236,7 +223,7 @@
         </div>
 
         <div class="ctaRow" style="margin-top:14px">
-          <a class="btn primary" href="href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/"" target="_blank" rel="noopener">
+          <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">
             📅 Termin buchen
           </a>
         </div>
