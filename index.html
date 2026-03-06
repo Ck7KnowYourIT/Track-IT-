@@ -1,285 +1,438 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Track-IT | CK7 #KnowYourIT</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Track-IT | CK7 #KnowYourIT</title>
 
-  <style>
-    :root{
-      --bg1:#f8fafc;
-      --bg2:#eef2ff;
-      --card:#ffffff;
-      --stroke:rgba(15,23,42,.10);
-      --text:#0f172a;
-      --muted:rgba(15,23,42,.70);
-      --muted2:rgba(15,23,42,.55);
-      --shadow:0 18px 45px rgba(2,6,23,.12);
-      --radius:18px;
-      --cta:#0f172a;
-      --ctaText:#ffffff;
-      --soft:rgba(255,255,255,.72);
-    }
+<style>
 
-    *{box-sizing:border-box}
+:root{
+--bg1:#f8fafc;
+--bg2:#eef2ff;
+--card:#ffffff;
+--stroke:rgba(15,23,42,.10);
+--text:#0f172a;
+--muted:rgba(15,23,42,.70);
+--muted2:rgba(15,23,42,.55);
+--shadow:0 18px 45px rgba(2,6,23,.12);
+--radius:18px;
+--cta:#0f172a;
+--ctaText:#ffffff;
+--soft:rgba(255,255,255,.72);
+}
 
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
-        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      min-height:100vh;
-    }
+*{box-sizing:border-box}
 
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:22px;
-    }
+body{
+margin:0;
+font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+color:var(--text);
+background:
+radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
+radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
+linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+min-height:100vh;
+}
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:var(--soft);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:999px;
-      padding:10px 12px;
-      box-shadow:0 10px 26px rgba(2,6,23,.10);
-    }
+.wrap{
+max-width:1100px;
+margin:0 auto;
+padding:22px;
+}
 
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+/* Topbar */
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(15,23,42,.03);
-      text-decoration:none;
-      color:var(--text);
-    }
+.topbar{
+position:sticky;
+top:0;
+z-index:20;
+background:var(--soft);
+backdrop-filter:blur(10px);
+border:1px solid rgba(15,23,42,.10);
+border-radius:999px;
+padding:10px 12px;
+box-shadow:0 10px 26px rgba(2,6,23,.10);
+}
 
-    .brandLogo{
-      height:28px;
-      width:auto;
-      display:block;
-    }
+.nav{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
 
-    .brand b{
-      letter-spacing:.2px;
-    }
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+padding:6px 10px;
+border-radius:999px;
+border:1px solid rgba(15,23,42,.10);
+background:rgba(15,23,42,.03);
+text-decoration:none;
+color:var(--text);
+}
 
-    .spacer{
-      flex:1;
-    }
+.brandLogo{
+height:28px;
+width:auto;
+display:block;
+}
 
-    .tab{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.55);
-      color:var(--text);
-      text-decoration:none;
-      font-weight:650;
-      font-size:14px;
-      transition:.15s ease;
-      white-space:nowrap;
-    }
+.brand b{
+letter-spacing:.2px;
+}
 
-    .tab:hover{
-      background:rgba(15,23,42,.04);
-    }
+.spacer{
+flex:1;
+}
 
-    .hero{
-      margin-top:18px;
-      background:rgba(255,255,255,.70);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:34px;
-      overflow:hidden;
-      position:relative;
-    }
+.tab{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:10px 12px;
+border-radius:999px;
+border:1px solid rgba(15,23,42,.10);
+background:rgba(255,255,255,.55);
+color:var(--text);
+text-decoration:none;
+font-weight:650;
+font-size:14px;
+transition:.15s ease;
+white-space:nowrap;
+}
 
-    .hero h1{
-      margin:0 0 10px 0;
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
+.tab:hover{
+background:rgba(15,23,42,.04);
+}
 
-    .hero p{
-      margin:0 0 18px 0;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.55;
-      max-width:860px;
-    }
+/* Hero */
 
-    .pillrow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
-    }
+.hero{
+margin-top:18px;
+background:rgba(255,255,255,.70);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:30px;
+}
 
-    .pill{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      color:var(--muted);
-      background:rgba(255,255,255,.75);
-      font-size:13px;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-    }
+.hero h1{
+margin:0 0 10px 0;
+font-size:44px;
+line-height:1.05;
+letter-spacing:-.6px;
+}
 
-    .sectionTitle{
-      margin:22px 0 10px 0;
-      font-size:16px;
-      color:var(--muted);
-      font-weight:800;
-      letter-spacing:.2px;
-    }
+.hero p{
+margin:0 0 18px 0;
+color:var(--muted);
+font-size:17px;
+line-height:1.55;
+max-width:860px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:14px;
-      margin-top:10px;
-    }
+.pillrow{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:12px;
+}
 
-    .card{
-      background:rgba(255,255,255,.78);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      box-shadow:0 10px 26px rgba(2,6,23,.08);
-      padding:18px;
-    }
+.pill{
+padding:8px 10px;
+border-radius:999px;
+border:1px solid rgba(15,23,42,.10);
+color:var(--muted);
+background:rgba(255,255,255,.75);
+font-size:13px;
+display:inline-flex;
+gap:8px;
+align-items:center;
+}
 
-    .btnRow{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+/* SECTION TITLE */
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:900;
-      text-decoration:none;
-      border:1px solid rgba(15,23,42,.10);
-      transition:.15s ease;
-      white-space:nowrap;
-    }
+.sectionTitle{
+margin:26px 0 14px 0;
+font-size:18px;
+color:var(--text);
+font-weight:800;
+}
 
-    .btn.primary{
-      background:var(--cta);
-      color:var(--ctaText);
-      border-color:transparent;
-      box-shadow:0 12px 28px rgba(2,6,23,.18);
-    }
+/* GRID */
 
-    .btn.primary:hover{
-      transform:translateY(-1px);
-      filter:brightness(.98);
-    }
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:16px;
+}
 
-    .btn.ghost{
-      background:rgba(255,255,255,.78);
-      color:var(--text);
-    }
+/* CARD */
 
-    .steps{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:14px;
-      margin-top:10px;
-    }
+.card{
+background:rgba(255,255,255,.80);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+box-shadow:0 10px 26px rgba(2,6,23,.08);
+padding:22px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+min-height:250px;
+}
 
-    .step{
-      background:rgba(255,255,255,.70);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      padding:18px;
-    }
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:6px 10px;
+border-radius:999px;
+border:1px solid rgba(15,23,42,.10);
+background:rgba(15,23,42,.03);
+color:var(--muted);
+font-size:12px;
+font-weight:800;
+margin-bottom:10px;
+}
 
-    .trust{
-      margin-top:20px;
-      padding:16px 18px;
-      background:rgba(255,255,255,.68);
-      border:1px solid var(--stroke);
-      border-radius:14px;
-      text-align:center;
-    }
+.card h3{
+margin:0 0 10px 0;
+font-size:18px;
+}
 
-    .footer{
-      margin:26px 0 12px 0;
-      color:var(--muted2);
-      font-size:12px;
-      text-align:center;
-    }
+.card p{
+margin:0;
+color:var(--muted);
+line-height:1.55;
+font-size:14px;
+flex-grow:1;
+}
 
-    @media (max-width:980px){
-      .spacer{display:none}
-      .grid,.steps{grid-template-columns:1fr}
-      .hero h1{font-size:36px}
-    }
+.btnRow{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
 
-    /* MOBILE FEINSCHLIFF */
-    @media (max-width:600px){
+/* BUTTONS */
 
-      .wrap{
-        padding:14px;
-      }
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 16px;
+border-radius:12px;
+font-weight:900;
+text-decoration:none;
+border:1px solid rgba(15,23,42,.10);
+transition:.15s ease;
+}
 
-      .hero{
-        padding:22px;
-      }
+.btn.primary{
+background:var(--cta);
+color:var(--ctaText);
+border-color:transparent;
+box-shadow:0 12px 28px rgba(2,6,23,.18);
+}
 
-      .hero h1{
-        font-size:30px;
-      }
+.btn.primary:hover{
+transform:translateY(-1px);
+}
 
-      .hero p{
-        font-size:16px;
-      }
+.btn.ghost{
+background:rgba(255,255,255,.78);
+color:var(--text);
+}
 
-      .card,
-      .step{
-        padding:20px;
-      }
+.steps{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:14px;
+margin-top:16px;
+}
 
-      .brandLogo{
-        height:24px;
-      }
+.step{
+background:rgba(255,255,255,.70);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+padding:18px;
+}
 
-      .tab{
-        font-size:13px;
-        padding:9px 11px;
-      }
+.step b{
+display:block;
+margin-bottom:6px;
+}
 
-    }
+.step span{
+color:var(--muted);
+line-height:1.55;
+font-size:14px;
+}
 
-  </style>
+.trust{
+margin-top:20px;
+padding:16px 18px;
+background:rgba(255,255,255,.68);
+border:1px solid var(--stroke);
+border-radius:14px;
+color:var(--muted);
+font-size:14px;
+line-height:1.5;
+text-align:center;
+}
+
+.footer{
+margin:26px 0 12px 0;
+color:var(--muted2);
+font-size:12px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media (max-width:980px){
+.spacer{display:none}
+.grid,.steps{grid-template-columns:1fr}
+.hero h1{font-size:36px}
+}
+
+</style>
 </head>
+
+<body>
+
+<div class="wrap">
+
+<div class="topbar">
+<div class="nav">
+
+<a class="brand" href="./index.html">
+<img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
+<b>#KnowYourIT</b>
+</a>
+
+<div class="spacer"></div>
+
+<a class="tab" href="https://ck7.de/unternehmen" target="_blank">Über CK7</a>
+<a class="tab" href="https://ck7.de/" target="_blank">Website besuchen</a>
+
+</div>
+</div>
+
+<section class="hero">
+
+<h1>Track-IT: Störungen endlich steuerbar machen</h1>
+
+<p>
+Viele IT-Organisationen haben Tickets, Störungen und Eskalationen – aber keine einheitliche Priorisierung.
+Track-IT bringt Struktur über <b>Business-Impact</b>, <b>Dringlichkeit</b> und <b>Nutzerbetroffenheit</b> – nachvollziehbar und pragmatisch.
+</p>
+
+<div class="pillrow">
+<div class="pill">📄 Kostenloses Freebie</div>
+<div class="pill">📊 Kritikalitätsmatrix</div>
+<div class="pill">📅 30-Minuten Transparenz-Check</div>
+</div>
+
+</section>
+
+<div class="sectionTitle">
+So starten Sie mit mehr Transparenz in Ihrer IT
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div>
+<div class="badge">Freebie</div>
+<h3>PDF: Von 50+ Störungen zu klarer Steuerbarkeit</h3>
+
+<p>
+Sofort nutzbares Material, um IT-Störungen strukturiert einzuordnen
+und eine Priorisierung zu starten – ohne Toolwechsel, ohne Setup.
+</p>
+</div>
+
+<div class="btnRow">
+<a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">Freebie öffnen</a>
+<a class="btn ghost" href="./freebie.html">Details</a>
+</div>
+
+</div>
+
+<div class="card">
+
+<div>
+<div class="badge">Kritikalitätsmatrix</div>
+<h3>Bewertungsmatrix für Business-Impact & Dringlichkeit</h3>
+
+<p>
+Eine einfache Matrix zur systematischen Einordnung von Störungen –
+ideal als Grundlage für Service-Teams, IT-Leitung und Management-Kommunikation.
+</p>
+</div>
+
+<div class="btnRow">
+<a class="btn primary" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank">Matrix öffnen</a>
+<a class="btn ghost" href="./Kritikalitätsmatrix.html">Details</a>
+</div>
+
+</div>
+
+<div class="card">
+
+<div>
+<div class="badge">Transparenz-Check</div>
+<h3>30 Minuten: eure aktuelle Situation sortieren</h3>
+
+<p>
+Kurzer Termin ohne Verkaufsgespräch:
+Wir schauen gemeinsam auf eure größten Schmerzpunkte
+und was euch am schnellsten Transparenz bringt.
+</p>
+</div>
+
+<div class="btnRow">
+<a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank">Termin buchen</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="sectionTitle">So funktioniert’s in der Praxis</div>
+
+<div class="steps">
+
+<div class="step">
+<b>1) Einordnen</b>
+<span>Störungen strukturiert erfassen und einheitlich bewerten – statt „Gefühl“ und Ad-hoc-Eskalationen.</span>
+</div>
+
+<div class="step">
+<b>2) Priorisieren</b>
+<span>Business-Impact + Dringlichkeit + Nutzerbetroffenheit → klare Reihenfolge für Abarbeitung.</span>
+</div>
+
+<div class="step">
+<b>3) Kommunizieren</b>
+<span>Transparenz für Fachbereich & Management: warum etwas Priorität hat – und was als Nächstes passiert.</span>
+</div>
+
+</div>
+
+<div class="trust">
+Praxisnah entwickelt aus realen IT-Service-Situationen – für mehr Transparenz,
+bessere Priorisierung und nachvollziehbare Kommunikation.
+</div>
+
+<div class="footer">© CK7 #KnowYourIT</div>
+
+</div>
+
+</body>
+</html>
