@@ -1,322 +1,349 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Track-IT | CK7 #KnowYourIT</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track-IT | CK7 #KnowYourIT</title>
 
-<style>
-:root{
-  --bg1:#f8fafc;
-  --bg2:#eef2ff;
-  --card:#ffffff;
-  --stroke:rgba(15,23,42,.10);
-  --text:#0f172a;
-  --muted:rgba(15,23,42,.70);
-  --muted2:rgba(15,23,42,.55);
-  --shadow:0 18px 45px rgba(2,6,23,.12);
-  --radius:18px;
-  --cta:#0f172a;
-  --ctaText:#ffffff;
-  --soft:rgba(255,255,255,.72);
-}
+  <style>
+    :root{
+      --bg1:#f8fafc;
+      --bg2:#eef2ff;
+      --card:#ffffff;
+      --stroke:rgba(15,23,42,.10);
+      --text:#0f172a;
+      --muted:rgba(15,23,42,.70);
+      --muted2:rgba(15,23,42,.55);
+      --shadow:0 18px 45px rgba(2,6,23,.12);
+      --radius:18px;
+      --cta:#0f172a;
+      --ctaText:#ffffff;
+      --soft:rgba(255,255,255,.72);
+    }
 
-*{box-sizing:border-box}
+    *{box-sizing:border-box}
 
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
-    radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
-    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-  min-height:100vh;
-}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      min-height:100vh;
+    }
 
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:22px;
-}
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:22px;
+    }
 
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:var(--soft);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:999px;
-  padding:10px 12px;
-  box-shadow:0 10px 26px rgba(2,6,23,.10);
-}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:var(--soft);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:999px;
+      padding:10px 12px;
+      box-shadow:0 10px 26px rgba(2,6,23,.10);
+    }
 
-.nav{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.10);
-  background:rgba(15,23,42,.03);
-  text-decoration:none;
-  color:var(--text);
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+      text-decoration:none;
+      color:var(--text);
+    }
 
-.brandLogo{
-  height:28px;
-  width:auto;
-  display:block;
-}
+    .brandLogo{
+      height:28px;
+      width:auto;
+      display:block;
+    }
 
-.brand b{
-  letter-spacing:.2px;
-}
+    .brand b{
+      letter-spacing:.2px;
+    }
 
-.spacer{
-  flex:1;
-}
+    .spacer{
+      flex:1;
+    }
 
-.tab{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 12px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.10);
-  background:rgba(255,255,255,.55);
-  color:var(--text);
-  text-decoration:none;
-  font-weight:650;
-  font-size:14px;
-  transition:.15s ease;
-  white-space:nowrap;
-}
+    .tab{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.55);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:650;
+      font-size:14px;
+      transition:.15s ease;
+      white-space:nowrap;
+    }
 
-.tab:hover{
-  background:rgba(15,23,42,.04);
-}
+    .tab:hover{
+      background:rgba(15,23,42,.04);
+    }
 
-.hero{
-  margin-top:18px;
-  background:rgba(255,255,255,.70);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:30px;
-}
+    .hero{
+      margin-top:18px;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:32px;
+    }
 
-.hero h1{
-  margin:0 0 10px 0;
-  font-size:44px;
-  line-height:1.05;
-  letter-spacing:-.6px;
-}
+    .hero h1{
+      margin:0 0 12px 0;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+      max-width:900px;
+    }
 
-.hero p{
-  margin:0 0 18px 0;
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.55;
-  max-width:860px;
-}
+    .hero p{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.6;
+      max-width:920px;
+    }
 
-.pillrow{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
-}
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
 
-.pill{
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.10);
-  color:var(--muted);
-  background:rgba(255,255,255,.75);
-  font-size:13px;
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-}
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      color:var(--muted);
+      background:rgba(255,255,255,.75);
+      font-size:13px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
 
-.sectionTitle{
-  margin:26px 0 14px 0;
-  font-size:18px;
-  color:var(--text);
-  font-weight:800;
-}
+    .sectionTitle{
+      margin:28px 0 14px 0;
+      font-size:22px;
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:-.2px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:16px;
-}
+    .introText{
+      color:var(--muted);
+      line-height:1.6;
+      max-width:900px;
+      margin:0 0 16px 0;
+    }
 
-.card{
-  background:rgba(255,255,255,.80);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  box-shadow:0 10px 26px rgba(2,6,23,.08);
-  padding:22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:250px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:16px;
+    }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(15,23,42,.10);
-  background:rgba(15,23,42,.03);
-  color:var(--muted);
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:10px;
-}
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:0 10px 26px rgba(2,6,23,.08);
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:280px;
+    }
 
-.card h3{
-  margin:0 0 10px 0;
-  font-size:18px;
-}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.03);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
 
-.card p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.55;
-  font-size:14px;
-  flex-grow:1;
-}
+    .card h3{
+      margin:0 0 10px 0;
+      font-size:18px;
+      line-height:1.35;
+      letter-spacing:-.2px;
+    }
 
-.btnRow{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
-}
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+      flex-grow:1;
+    }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 16px;
-  border-radius:12px;
-  font-weight:900;
-  text-decoration:none;
-  border:1px solid rgba(15,23,42,.10);
-  transition:.15s ease;
-}
+    .btnRow{
+      display:flex;
+      gap:10px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
 
-.btn.primary{
-  background:var(--cta);
-  color:var(--ctaText);
-  border-color:transparent;
-  box-shadow:0 12px 28px rgba(2,6,23,.18);
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid rgba(15,23,42,.10);
+      transition:.15s ease;
+      white-space:nowrap;
+    }
 
-.btn.primary:hover{
-  transform:translateY(-1px);
-}
+    .btn.primary{
+      background:var(--cta);
+      color:var(--ctaText);
+      border-color:transparent;
+      box-shadow:0 12px 28px rgba(2,6,23,.18);
+    }
 
-.btn.ghost{
-  background:rgba(255,255,255,.78);
-  color:var(--text);
-}
+    .btn.primary:hover{
+      transform:translateY(-1px);
+    }
 
-.steps{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:14px;
-  margin-top:16px;
-}
+    .btn.ghost{
+      background:rgba(255,255,255,.78);
+      color:var(--text);
+    }
 
-.step{
-  background:rgba(255,255,255,.70);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  padding:18px;
-}
+    .btn.ghost:hover{
+      background:rgba(15,23,42,.04);
+    }
 
-.step b{
-  display:block;
-  margin-bottom:6px;
-}
+    .steps{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
 
-.step span{
-  color:var(--muted);
-  line-height:1.55;
-  font-size:14px;
-}
+    .step{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      padding:20px;
+    }
 
-.trust{
-  margin-top:20px;
-  padding:16px 18px;
-  background:rgba(255,255,255,.68);
-  border:1px solid var(--stroke);
-  border-radius:14px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.5;
-  text-align:center;
-}
+    .step b{
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
 
-.footer{
-  margin:26px 0 12px 0;
-  color:var(--muted2);
-  font-size:12px;
-  text-align:center;
-}
+    .step span{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+    }
 
-@media (max-width:980px){
-  .spacer{display:none}
-  .grid,.steps{grid-template-columns:1fr}
-  .hero h1{font-size:36px}
-}
+    .quote{
+      margin-top:18px;
+      padding:20px;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+    }
 
-@media (max-width:600px){
-  .wrap{
-    padding:14px;
-  }
+    .quote strong{
+      color:var(--text);
+      display:block;
+      margin-bottom:8px;
+    }
 
-  .hero{
-    padding:22px;
-  }
+    .selfcheck{
+      margin-top:18px;
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      padding:22px;
+    }
 
-  .hero h1{
-    font-size:30px;
-    line-height:1.12;
-  }
+    .selfcheck ul{
+      margin:12px 0 0 18px;
+      color:var(--muted);
+      line-height:1.8;
+      padding:0;
+    }
 
-  .hero p{
-    font-size:16px;
-  }
+    .trust{
+      margin-top:20px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.68);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      text-align:center;
+    }
 
-  .card,
-  .step{
-    padding:20px;
-  }
+    .footer{
+      margin:26px 0 12px 0;
+      color:var(--muted2);
+      font-size:12px;
+      text-align:center;
+    }
 
-  .brandLogo{
-    height:24px;
-  }
+    @media (max-width:980px){
+      .spacer{display:none}
+      .grid,.steps{grid-template-columns:1fr}
+      .hero h1{font-size:36px}
+    }
 
-  .tab{
-    font-size:13px;
-    padding:9px 11px;
-  }
-}
-</style>
+    @media (max-width:600px){
+      .wrap{padding:14px}
+      .hero{padding:22px}
+      .hero h1{font-size:30px; line-height:1.12}
+      .hero p{font-size:16px}
+      .card,.step,.selfcheck{padding:20px}
+      .brandLogo{height:24px}
+      .tab{font-size:13px; padding:9px 11px}
+    }
+  </style>
 </head>
 
 <body>
@@ -340,8 +367,9 @@ body{
     <h1>Track-IT: Störungen endlich steuerbar machen</h1>
 
     <p>
-      Viele IT-Organisationen haben Tickets, Störungen und Eskalationen – aber keine einheitliche Priorisierung.
-      Track-IT bringt Struktur über <b>Business-Impact</b>, <b>Dringlichkeit</b> und <b>Nutzerbetroffenheit</b> – nachvollziehbar und pragmatisch.
+      Viele IT-Organisationen arbeiten intensiv — aber es fehlt eine klare Priorisierung.
+      Track-IT schafft Transparenz über <b>Business-Impact</b>, <b>Dringlichkeit</b> und
+      <b>Nutzerbetroffenheit</b> und macht IT-Störungen für Führung und Management nachvollziehbar.
     </p>
 
     <div class="pillrow">
@@ -351,7 +379,12 @@ body{
     </div>
   </section>
 
-  <div class="sectionTitle">So starten Sie mit mehr Transparenz in Ihrer IT</div>
+  <div class="sectionTitle">Mehr Transparenz für Prioritäten, Kritikalität und Führung</div>
+  <p class="introText">
+    Nicht fehlende Tools oder mangelnde Kompetenz sind in vielen IT-Organisationen das Kernproblem —
+    sondern fehlende Einordnung. Ohne gemeinsame Priorisierung erscheinen alle Themen gleich dringend.
+    Führung kann dann nicht steuern, sondern nur reagieren.
+  </p>
 
   <div class="grid">
 
@@ -360,8 +393,9 @@ body{
         <div class="badge">Freebie</div>
         <h3>PDF: Von 50+ Störungen zu klarer Steuerbarkeit</h3>
         <p>
-          Sofort nutzbares Material, um IT-Störungen strukturiert einzuordnen
-          und eine Priorisierung zu starten – ohne Toolwechsel, ohne Setup.
+          Kompakter Einstieg in die Frage, warum IT heute oft intensiv arbeitet — aber auf Führungs-
+          und Managementebene trotzdem keine klare Sicht auf geschäftskritische Themen entsteht.
+          Mit Zielbild, Framework und Praxisbezug.
         </p>
       </div>
 
@@ -374,10 +408,11 @@ body{
     <div class="card">
       <div>
         <div class="badge">Kritikalitätsmatrix</div>
-        <h3>Bewertungsmatrix für Business-Impact & Dringlichkeit</h3>
+        <h3>Bewertungsmatrix für Business-Impact &amp; Dringlichkeit</h3>
         <p>
-          Eine einfache Matrix zur systematischen Einordnung von Störungen –
-          ideal als Grundlage für Service-Teams, IT-Leitung und Management-Kommunikation.
+          Die 15-Minuten-Übung, um Ihre wichtigsten Störungen nach Nutzerbetroffenheit,
+          Geschäftsauswirkung und Management-Priorität einzuordnen — als praktische Grundlage
+          für bessere Priorisierung.
         </p>
       </div>
 
@@ -390,43 +425,67 @@ body{
     <div class="card">
       <div>
         <div class="badge">Transparenz-Check</div>
-        <h3>30 Minuten: eure aktuelle Situation sortieren</h3>
+        <h3>30 Minuten: aktuelle Lage strukturiert einordnen</h3>
         <p>
-          Kurzer Termin ohne Verkaufsgespräch:
-          Wir schauen gemeinsam auf eure größten Schmerzpunkte
-          und was euch am schnellsten Transparenz bringt.
+          Gemeinsam klären wir, wo Ihre IT heute Zeit, Geld und Aufmerksamkeit verliert —
+          und welche strukturellen Engpässe Ihre Steuerbarkeit begrenzen.
+          Kein Verkaufsgespräch. Kein Projekt. Nur Klarheit.
         </p>
       </div>
 
       <div class="btnRow">
-        <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Termin buchen</a>
+        <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Transparenz-Check buchen</a>
       </div>
     </div>
 
   </div>
 
-  <div class="sectionTitle">So funktioniert’s in der Praxis</div>
+  <div class="sectionTitle">Das 3-Schritte-Framework für steuerbare IT</div>
 
   <div class="steps">
     <div class="step">
-      <b>1) Einordnen</b>
-      <span>Störungen strukturiert erfassen und einheitlich bewerten – statt „Gefühl“ und Ad-hoc-Eskalationen.</span>
+      <b>1) Sichtbarkeit schaffen</b>
+      <span>Alle relevanten Störungen und Themen werden zentral erfasst, damit Entscheidungen nicht auf Annahmen basieren.</span>
     </div>
 
     <div class="step">
-      <b>2) Priorisieren</b>
-      <span>Business-Impact + Dringlichkeit + Nutzerbetroffenheit → klare Reihenfolge für Abarbeitung.</span>
+      <b>2) Kritikalität bewerten</b>
+      <span>Jede Störung wird nach ihrer tatsächlichen Geschäftsauswirkung eingeordnet — nicht nach technischem Symptom.</span>
     </div>
 
     <div class="step">
-      <b>3) Kommunizieren</b>
-      <span>Transparenz für Fachbereich &amp; Management: warum etwas Priorität hat – und was als Nächstes passiert.</span>
+      <b>3) Verantwortung zuordnen</b>
+      <span>Klare Zuständigkeiten ermöglichen Führung vor der Eskalation — statt erst im Ausnahmefall zu reagieren.</span>
     </div>
   </div>
 
+  <div class="quote">
+    <strong>Praxisbezug</strong>
+    „Durch die klare Struktur wussten wir sehr schnell, welche Themen wirklich relevant sind und wo Führung frühzeitig eingebunden werden muss.“
+    <br><br>
+    — IT-Leitung, bremenports GmbH &amp; Co. KG
+  </div>
+
+  <div class="sectionTitle">Selbstcheck: Wie steuerbar ist Ihre IT heute?</div>
+
+  <div class="selfcheck">
+    <p class="introText" style="margin:0; max-width:none;">
+      Beantworten Sie diese Fragen ehrlich:
+    </p>
+
+    <ul>
+      <li>Wissen Sie, welche IT-Störungen heute geschäftskritisch sind?</li>
+      <li>Sind Prioritäten für Fachbereiche und Management nachvollziehbar?</li>
+      <li>Beginnt Führung, bevor Eskalationen notwendig werden?</li>
+      <li>Gibt es eine einheitliche Priorisierung?</li>
+      <li>Kann das Management den IT-Status verstehen?</li>
+      <li>Sind Verantwortlichkeiten klar?</li>
+    </ul>
+  </div>
+
   <div class="trust">
-    Praxisnah entwickelt aus realen IT-Service-Situationen – für mehr Transparenz,
-    bessere Priorisierung und nachvollziehbare Kommunikation.
+    Praxisnah entwickelt aus realen IT-Service-Situationen — für weniger Eskalation,
+    klarere Prioritäten und nachvollziehbare Führung.
   </div>
 
   <div class="footer">© CK7 #KnowYourIT</div>
