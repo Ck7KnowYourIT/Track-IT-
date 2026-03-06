@@ -175,43 +175,81 @@ text-align:center;
 color:rgba(15,23,42,.55);
 }
 
-.mobileStickyCta{display:none}
+/* Floating CTA Desktop + Mobile */
+.floatingCtaCard{
+position:fixed;
+right:24px;
+bottom:24px;
+z-index:999;
+display:flex;
+align-items:center;
+gap:14px;
+padding:14px 16px;
+background:rgba(255,255,255,.94);
+border:1px solid rgba(15,23,42,.10);
+border-radius:18px;
+box-shadow:0 18px 40px rgba(2,6,23,.18);
+backdrop-filter:blur(10px);
+max-width:360px;
+}
+
+.floatingCtaText{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.floatingCtaText strong{
+font-size:15px;
+color:#0f172a;
+line-height:1.2;
+}
+
+.floatingCtaText span{
+font-size:13px;
+color:rgba(15,23,42,.68);
+line-height:1.35;
+}
+
+.floatingCtaBtn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 16px;
+border-radius:12px;
+background:#0f172a;
+color:#ffffff;
+text-decoration:none;
+font-weight:900;
+white-space:nowrap;
+box-shadow:0 10px 24px rgba(2,6,23,.18);
+transition:.15s ease;
+}
+
+.floatingCtaBtn:hover{
+transform:translateY(-1px);
+}
 
 @media (max-width:700px){
 
 .grid{grid-template-columns:1fr}
 
-.mobileStickyCta{
-position:fixed;
+.floatingCtaCard{
 left:14px;
 right:14px;
 bottom:14px;
-z-index:999;
-display:flex;
+max-width:none;
 flex-direction:column;
+align-items:stretch;
 gap:10px;
 padding:14px;
-background:rgba(255,255,255,.94);
-border:1px solid rgba(15,23,42,.10);
-border-radius:18px;
-box-shadow:0 18px 40px rgba(2,6,23,.18);
 }
 
-.mobileStickyCta strong{font-size:15px}
-.mobileStickyCta span{font-size:13px;color:rgba(15,23,42,.68)}
-
-.mobileStickyCtaBtn{
-display:flex;
-justify-content:center;
-padding:12px;
-border-radius:12px;
-background:#0f172a;
-color:white;
-text-decoration:none;
-font-weight:900;
+.floatingCtaBtn{
+width:100%;
 }
 
-body{padding-bottom:110px}
+body{padding-bottom:120px}
 
 }
 
@@ -226,14 +264,14 @@ body{padding-bottom:110px}
 <div class="nav">
 
 <a class="brand" href="./index.html">
-<img src="CK7Logo.png" class="brandLogo">
+<img src="CK7Logo.png" class="brandLogo" alt="CK7 Logo">
 <b>#KnowYourIT</b>
 </a>
 
 <div class="spacer"></div>
 
-<a class="tab" href="https://ck7.de/unternehmen" target="_blank">Über CK7</a>
-<a class="tab" href="https://ck7.de/" target="_blank">Website besuchen</a>
+<a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
+<a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
 
 </div>
 </div>
@@ -247,7 +285,7 @@ Kompakter Einstieg für IT-Leiter und Führungskräfte, die Störungen nicht nur
 sondern nachvollziehbar priorisieren wollen.
 </p>
 
-<a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">
+<a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">
 Freebie öffnen
 </a>
 
@@ -284,17 +322,18 @@ Kein Verkaufsgespräch. Kein Projekt. Nur Klarheit.
 
 </div>
 
-<div class="mobileStickyCta">
+<div class="floatingCtaCard">
+  <div class="floatingCtaText">
+    <strong>30-Minuten Transparenz-Check</strong>
+    <span>Einordnung statt Verkaufsgespräch.</span>
+  </div>
 
-<strong>30-Minuten Transparenz-Check</strong>
-<span>Kein Verkaufsgespräch. Nur Klarheit.</span>
-
-<a class="mobileStickyCtaBtn"
-href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true"
-target="_blank">
-Termin buchen
-</a>
-
+  <a class="floatingCtaBtn"
+     href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true"
+     target="_blank"
+     rel="noopener">
+    Termin buchen
+  </a>
 </div>
 
 </body>
