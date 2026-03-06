@@ -1,323 +1,244 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kritikalitätsmatrix | cK7 #KnowYourIT</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kritikalitätsmatrix | CK7 #KnowYourIT</title>
 
-  <style>
-    :root{
-      --ck7-blue:#1478A6;
-      --ck7-blue-dark:#0f5f84;
-      --ck7-orange:#F07A19;
-      --ck7-orange-dark:#d9680f;
+<style>
+:root{
+  --ck7-blue:#1478A6;
+  --ck7-blue-dark:#0f5f84;
+  --ck7-orange:#F07A19;
+  --ck7-orange-dark:#d9680f;
 
-      --bg1:#f6f8fa;
-      --bg2:#eef3f6;
-      --card:#ffffff;
-      --stroke:rgba(15,23,42,.10);
-      --text:#0f172a;
-      --muted:rgba(15,23,42,.72);
-      --muted2:rgba(15,23,42,.55);
-      --shadow:0 8px 24px rgba(15,23,42,.08);
-      --radius:14px;
-      --cta:var(--ck7-orange);
-      --ctaText:#ffffff;
-      --soft:rgba(255,255,255,.90);
-    }
+  --bg1:#f6f8fa;
+  --bg2:#eef3f6;
+  --text:#0f172a;
+  --muted:rgba(15,23,42,.72);
+  --muted2:rgba(15,23,42,.55);
+  --shadow:0 8px 24px rgba(15,23,42,.08);
+  --radius:14px;
+  --soft:rgba(255,255,255,.90);
+}
 
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(700px 420px at 10% 8%, rgba(20,120,166,.10), transparent 60%),
-        radial-gradient(720px 420px at 88% 10%, rgba(240,122,25,.10), transparent 58%),
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      min-height:100vh;
-    }
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(700px 420px at 10% 8%, rgba(20,120,166,.10), transparent 60%),
+    radial-gradient(720px 420px at 88% 10%, rgba(240,122,25,.10), transparent 58%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  min-height:100vh;
+}
 
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:22px;
-    }
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:22px;
+}
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:var(--soft);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:999px;
-      padding:10px 12px;
-      box-shadow:0 6px 18px rgba(15,23,42,.06);
-    }
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--soft);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:999px;
+  padding:10px 12px;
+  box-shadow:0 6px 18px rgba(15,23,42,.06);
+}
 
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+.nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(20,120,166,.15);
-      background:rgba(20,120,166,.04);
-      text-decoration:none;
-      color:var(--text);
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(20,120,166,.15);
+  background:rgba(20,120,166,.04);
+  text-decoration:none;
+  color:var(--text);
+}
 
-    .brandLogo{
-      height:28px;
-      width:auto;
-      display:block;
-    }
+.brandLogo{
+  height:28px;
+}
 
-    .brand b{
-      letter-spacing:.2px;
-    }
+.brandAccent{
+  color:var(--ck7-orange);
+}
 
-    .spacer{
-      flex:1;
-    }
+.spacer{
+  flex:1;
+}
 
-    .tab{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(20,120,166,.14);
-      background:rgba(255,255,255,.88);
-      color:var(--text);
-      text-decoration:none;
-      font-weight:650;
-      font-size:14px;
-      transition:.15s ease;
-      white-space:nowrap;
-    }
+.tab{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(20,120,166,.14);
+  background:white;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:650;
+  font-size:14px;
+}
 
-    .tab:hover{
-      background:rgba(20,120,166,.06);
-      border-color:rgba(20,120,166,.22);
-    }
+.hero{
+  margin-top:18px;
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:32px;
+  text-align:center;
+}
 
-    .hero{
-      margin-top:18px;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(20,120,166,.10);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:32px;
-      position:relative;
-      overflow:hidden;
-      text-align:center;
-    }
+.hero h1{
+  margin:0 0 12px 0;
+  font-size:40px;
+}
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      right:-80px;
-      top:-80px;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle, rgba(240,122,25,.10) 0%, transparent 65%);
-      pointer-events:none;
-    }
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.6;
+}
 
-    .hero h1{
-      margin:0 0 12px 0;
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:10px;
+  font-weight:900;
+  text-decoration:none;
+  background:var(--ck7-orange);
+  color:white;
+  box-shadow:0 10px 24px rgba(240,122,25,.24);
+}
 
-    .hero p{
-      margin:0 auto 18px auto;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.6;
-      max-width:880px;
-    }
+.btn:hover{
+  background:var(--ck7-orange-dark);
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:10px;
-      font-weight:900;
-      text-decoration:none;
-      border:1px solid rgba(15,23,42,.10);
-      transition:.15s ease;
-      white-space:nowrap;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:22px;
+}
 
-    .btn.primary{
-      background:var(--cta);
-      color:var(--ctaText);
-      border-color:transparent;
-      box-shadow:0 10px 24px rgba(240,122,25,.24);
-    }
+.card{
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(15,23,42,.05);
+  padding:22px;
+}
 
-    .btn.primary:hover{
-      transform:translateY(-1px);
-      background:var(--ck7-orange-dark);
-    }
+.card h3{
+  margin:0 0 10px 0;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-      margin-top:22px;
-    }
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+}
 
-    .card{
-      background:rgba(255,255,255,.96);
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(15,23,42,.05);
-      padding:22px;
-    }
+.card ul{
+  margin:10px 0 0 18px;
+  color:var(--muted);
+  line-height:1.8;
+}
 
-    .card h3{
-      margin:0 0 10px 0;
-      font-size:18px;
-      line-height:1.35;
-      letter-spacing:-.2px;
-    }
+.trust{
+  margin-top:20px;
+  padding:16px;
+  background:linear-gradient(90deg, rgba(20,120,166,.06), rgba(240,122,25,.06));
+  border-radius:12px;
+  text-align:center;
+  color:var(--muted);
+}
 
-    .card ul{
-      margin:0;
-      padding-left:18px;
-      line-height:1.8;
-      color:var(--muted);
-    }
+.footer{
+  margin:26px 0 12px 0;
+  text-align:center;
+  color:var(--muted2);
+  font-size:12px;
+}
 
-    .card p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
+.floatingCtaCard{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 16px;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(2,6,23,.18);
+}
 
-    .trust{
-      margin-top:20px;
-      padding:16px 18px;
-      background:linear-gradient(90deg, rgba(20,120,166,.06), rgba(240,122,25,.06));
-      border:1px solid rgba(20,120,166,.10);
-      border-radius:12px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-      text-align:center;
-    }
+.floatingCtaText strong{
+  font-size:15px;
+}
 
-    .footer{
-      margin:26px 0 12px 0;
-      color:var(--muted2);
-      font-size:12px;
-      text-align:center;
-    }
+.floatingCtaText span{
+  font-size:13px;
+  color:var(--muted);
+}
 
-    .floatingCtaCard{
-      position:fixed;
-      right:24px;
-      bottom:24px;
-      z-index:999;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:14px 16px;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:18px;
-      box-shadow:0 18px 40px rgba(2,6,23,.18);
-      backdrop-filter:blur(10px);
-      max-width:360px;
-    }
+.floatingCtaBtn{
+  padding:12px 16px;
+  border-radius:12px;
+  background:var(--ck7-orange);
+  color:white;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(240,122,25,.24);
+}
 
-    .floatingCtaText{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
+.floatingCtaBtn:hover{
+  background:var(--ck7-orange-dark);
+}
 
-    .floatingCtaText strong{
-      font-size:15px;
-      color:#0f172a;
-      line-height:1.2;
-    }
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
 
-    .floatingCtaText span{
-      font-size:13px;
-      color:rgba(15,23,42,.68);
-      line-height:1.35;
-    }
+@media (max-width:700px){
+  .floatingCtaCard{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    max-width:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    padding:14px;
+  }
 
-    .floatingCtaBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      background:#0f172a;
-      color:#ffffff;
-      text-decoration:none;
-      font-weight:900;
-      white-space:nowrap;
-      box-shadow:0 10px 24px rgba(2,6,23,.18);
-      transition:.15s ease;
-    }
+  .floatingCtaBtn{
+    width:100%;
+    text-align:center;
+  }
 
-    .floatingCtaBtn:hover{
-      transform:translateY(-1px);
-    }
-
-    @media (max-width:980px){
-      .spacer{display:none}
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:36px}
-    }
-
-    @media (max-width:700px){
-      .floatingCtaCard{
-        left:14px;
-        right:14px;
-        bottom:14px;
-        max-width:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:10px;
-        padding:14px;
-      }
-
-      .floatingCtaBtn{
-        width:100%;
-      }
-
-      body{padding-bottom:120px}
-    }
-
-    @media (max-width:600px){
-      .wrap{padding:14px}
-      .hero{padding:22px}
-      .hero h1{font-size:30px; line-height:1.12}
-      .hero p{font-size:16px}
-      .card{padding:20px}
-      .brandLogo{height:24px}
-      .tab{font-size:13px; padding:9px 11px}
-    }
-  </style>
+  body{
+    padding-bottom:120px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -326,15 +247,13 @@
   <div class="topbar">
     <div class="nav">
       <a class="brand" href="./index.html">
-        <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
-        <b>cK7 #KnowYourIT</b>
+        <img src="CK7Logo.png" class="brandLogo" alt="CK7 Logo">
+        <b>CK7 <span class="brandAccent">#KnowYourIT</span></b>
       </a>
 
       <div class="spacer"></div>
 
-      <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">
-  Besuche cK7
-</a>
+      <a class="tab" href="https://ck7.de" target="_blank" rel="noopener">Besuche CK7</a>
     </div>
   </div>
 
@@ -346,7 +265,7 @@
       Geschäftsauswirkung und Management-Priorität einzuordnen.
     </p>
 
-    <a class="btn primary"
+    <a class="btn"
        href="Kritikalitäts_Matrix_ck7_TrackIT.pdf"
        target="_blank"
        rel="noopener">
@@ -360,8 +279,8 @@
       <h3>Wofür die Matrix gedacht ist</h3>
       <p>
         Die Matrix hilft dabei, aus vielen parallelen Themen die wirklich
-        geschäftskritischen Störungen sichtbar zu machen —
-        nicht nach technischem Symptom, sondern nach Wirkung.
+        geschäftskritischen Störungen sichtbar zu machen — nicht nach
+        technischem Symptom, sondern nach Wirkung.
       </p>
     </div>
 
@@ -377,19 +296,20 @@
   </div>
 
   <div class="trust">
-    Wenn diese Übung bereits Klarheit schafft,
-    liegt das Defizit oft nicht in der Technik —
-    sondern in der fehlenden Steuerungslogik.
+    Wenn diese Übung bereits Klarheit schafft, liegt das Defizit oft
+    nicht in der Technik — sondern in der fehlenden Steuerungslogik.
   </div>
 
-  <div class="footer">© cK7 #KnowYourIT</div>
+  <div class="footer">
+    © CK7 #KnowYourIT
+  </div>
 
 </div>
 
 <div class="floatingCtaCard">
   <div class="floatingCtaText">
     <strong>30-Minuten Transparenz-Check</strong>
-    <span>Einordnung statt Verkaufsgespräch.</span>
+    <span>Einordnung statt Verkaufsgespräch</span>
   </div>
 
   <a class="floatingCtaBtn"
