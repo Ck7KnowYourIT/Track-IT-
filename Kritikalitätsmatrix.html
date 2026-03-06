@@ -18,6 +18,7 @@
       --radius:18px;
       --cta:#0f172a;
       --ctaText:#ffffff;
+      --soft:rgba(255,255,255,.72);
     }
 
     *{box-sizing:border-box}
@@ -36,7 +37,7 @@
 
     .topbar{
       position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.72);
+      background:var(--soft);
       backdrop-filter: blur(10px);
       border:1px solid rgba(15,23,42,.10);
       border-radius:999px;
@@ -50,8 +51,14 @@
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
       background:rgba(15,23,42,.03);
+      text-decoration:none;
+      color:var(--text);
     }
-    .brandLogo{height:26px;width:auto;display:block}
+    .brandLogo{
+      height:28px;
+      width:auto;
+      display:block;
+    }
     .brand b{letter-spacing:.2px}
     .spacer{flex:1}
 
@@ -60,7 +67,7 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.50);
+      background:rgba(255,255,255,.55);
       color:var(--text);
       text-decoration:none;
       font-weight:650;
@@ -69,10 +76,6 @@
       white-space:nowrap;
     }
     .tab:hover{background:rgba(15,23,42,.04)}
-    .tab.active{
-      background:rgba(15,23,42,.10);
-      border-color:rgba(15,23,42,.16);
-    }
 
     .center{
       display:flex;
@@ -106,9 +109,14 @@
     }
 
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:12px;
-      font-weight:900;text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:900;
+      text-decoration:none;
       border:1px solid rgba(15,23,42,.10);
       transition:.15s ease;
       white-space:nowrap;
@@ -117,7 +125,11 @@
       border-color:transparent;
       box-shadow:0 12px 28px rgba(2,6,23,.18);
     }
-    .btn:hover{transform:translateY(-1px); filter:brightness(.98)}
+
+    .btn:hover{
+      transform:translateY(-1px);
+      filter:brightness(.98);
+    }
 
     .footer{
       margin-top:14px;
@@ -133,20 +145,18 @@
 
 <body>
   <div class="wrap">
+
     <div class="topbar">
       <div class="nav">
-        <div class="brand">
-          <img class="brandLogo" src="CK7Logo.png" alt="CK7 Logo">
+        <a class="brand" href="./index.html">
+          <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
           <b>#KnowYourIT</b>
-        </div>
+        </a>
 
         <div class="spacer"></div>
 
-        <a class="tab" href="./index.html">Start</a>
-        <a class="tab" href="./freebie.html">Freebie</a>
-        <a class="tab active" href="./Kritikalitätsmatrix.html">Matrix</a>
-        <a class="tab" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">PDF</a>
-        <a class="tab" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">Termin buchen</a>
+        <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
+        <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
       </div>
     </div>
 
@@ -160,12 +170,13 @@
         </p>
 
         <a class="btn" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">
-          🧩 Kritikalitätsmatrix öffnen
+          Matrix öffnen
         </a>
 
         <div class="footer">© CK7 #KnowYourIT</div>
       </div>
     </div>
+
   </div>
 </body>
 </html>
