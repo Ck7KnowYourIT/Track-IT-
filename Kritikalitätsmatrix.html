@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kritikalitäts-Matrix | CK7</title>
+  <title>Kritikalitätsmatrix | CK7</title>
 
   <style>
     :root{
@@ -22,9 +22,10 @@
     }
 
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
@@ -36,17 +37,28 @@
     .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
     .topbar{
-      position:sticky; top:0; z-index:20;
+      position:sticky;
+      top:0;
+      z-index:20;
       background:var(--soft);
-      backdrop-filter: blur(10px);
+      backdrop-filter:blur(10px);
       border:1px solid rgba(15,23,42,.10);
       border-radius:999px;
       padding:10px 12px;
-      box-shadow: 0 10px 26px rgba(2,6,23,.10);
+      box-shadow:0 10px 26px rgba(2,6,23,.10);
     }
-    .nav{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     .brand{
-      display:flex; align-items:center; gap:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
@@ -54,16 +66,20 @@
       text-decoration:none;
       color:var(--text);
     }
+
     .brandLogo{
       height:28px;
       width:auto;
       display:block;
     }
+
     .brand b{letter-spacing:.2px}
     .spacer{flex:1}
 
     .tab{
-      display:inline-flex; align-items:center; gap:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
@@ -75,108 +91,225 @@
       transition:.15s ease;
       white-space:nowrap;
     }
+
     .tab:hover{background:rgba(15,23,42,.04)}
 
-    .center{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:calc(100vh - 120px);
-      padding:18px 0;
-      text-align:center;
-    }
-
-    .card{
+    .hero{
+      margin-top:18px;
       background:rgba(255,255,255,.78);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      padding:28px;
-      box-shadow: var(--shadow);
-      max-width:640px;
-      width:100%;
+      box-shadow:var(--shadow);
+      padding:30px;
+      text-align:center;
     }
 
-    h1{
-      margin:0 0 10px 0;
-      font-size:28px;
-      letter-spacing:-.2px;
+    .hero h1{
+      margin:0 0 12px 0;
+      font-size:38px;
+      line-height:1.1;
+      letter-spacing:-.5px;
     }
 
-    p{
-      margin:0 0 18px 0;
+    .hero p{
+      margin:0 auto 18px auto;
       color:var(--muted);
-      line-height:1.55;
+      font-size:17px;
+      line-height:1.6;
+      max-width:780px;
+    }
+
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      margin-top:14px;
+    }
+
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      color:var(--muted);
+      background:rgba(255,255,255,.75);
+      font-size:13px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:22px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      padding:12px 14px;
+      padding:12px 16px;
       border-radius:12px;
       font-weight:900;
       text-decoration:none;
       border:1px solid rgba(15,23,42,.10);
       transition:.15s ease;
       white-space:nowrap;
+    }
+
+    .btn.primary{
       background:var(--cta);
       color:var(--ctaText);
       border-color:transparent;
       box-shadow:0 12px 28px rgba(2,6,23,.18);
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-      filter:brightness(.98);
+    .btn.primary:hover{transform:translateY(-1px)}
+
+    .btn.ghost{
+      background:rgba(255,255,255,.78);
+      color:var(--text);
+    }
+
+    .btn.ghost:hover{background:rgba(15,23,42,.04)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:0 10px 26px rgba(2,6,23,.08);
+      padding:22px;
+    }
+
+    .card h3{
+      margin:0 0 10px 0;
+      font-size:20px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .list{
+      margin:12px 0 0 18px;
+      color:var(--muted);
+      line-height:1.8;
+      padding:0;
+    }
+
+    .trust{
+      margin-top:20px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.68);
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      text-align:center;
     }
 
     .footer{
-      margin-top:14px;
+      margin:26px 0 12px 0;
       color:var(--muted2);
       font-size:12px;
+      text-align:center;
     }
 
-    @media (max-width: 900px){
+    @media (max-width:980px){
       .spacer{display:none}
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+
+    @media (max-width:600px){
+      .wrap{padding:14px}
+      .hero,.card{padding:20px}
+      .hero h1{font-size:28px}
+      .hero p{font-size:16px}
+      .brandLogo{height:24px}
+      .tab{font-size:13px;padding:9px 11px}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div class="topbar">
-      <div class="nav">
-        <a class="brand" href="./index.html">
-          <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
-          <b>#KnowYourIT</b>
-        </a>
+  <div class="topbar">
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
+        <b>#KnowYourIT</b>
+      </a>
 
-        <div class="spacer"></div>
+      <div class="spacer"></div>
 
-        <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
-        <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
-      </div>
+      <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
+      <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
     </div>
-
-    <div class="center">
-      <div class="card">
-        <h1>Track-It! Kritikalitäts-Bewertungsmatrix</h1>
-        <p>
-          Vielen Dank für Ihr Interesse an unserem kostenlosen Track-It! Freebie.<br>
-          Zur systematischen Einordnung und Priorisierung von IT-Störungen
-          nach Nutzerbetroffenheit, Geschäftsimpact und Dringlichkeit.
-        </p>
-
-        <a class="btn" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">
-          Matrix öffnen
-        </a>
-
-        <div class="footer">© CK7 #KnowYourIT</div>
-      </div>
-    </div>
-
   </div>
+
+  <section class="hero">
+    <h1>Kritikalitätsmatrix für IT-Störungen</h1>
+    <p>
+      Nutzen Sie die Matrix, um Störungen nach Nutzerbetroffenheit, Geschäftsauswirkung
+      und Management-Priorität einzuordnen. Die Übung ist bewusst einfach gehalten —
+      damit Sie in kurzer Zeit ein belastbares Bild gewinnen.
+    </p>
+
+    <div class="pillrow">
+      <div class="pill">📊 Matrix als PDF</div>
+      <div class="pill">⏱️ 15-Minuten-Übung</div>
+      <div class="pill">📅 Nächster Schritt: Transparenz-Check</div>
+    </div>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">Matrix öffnen</a>
+      <a class="btn ghost" href="./freebie.html">Zum Freebie</a>
+      <a class="btn ghost" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Termin buchen</a>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Wofür die Matrix gedacht ist</h3>
+      <p>
+        Die Matrix hilft dabei, aus vielen parallelen Themen die wirklich geschäftskritischen
+        Störungen sichtbar zu machen — nicht nach technischem Symptom, sondern nach Wirkung.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>So nutzen Sie die Übung</h3>
+      <ul class="list">
+        <li>Wählen Sie Ihre 10 wichtigsten Störungen</li>
+        <li>Ordnen Sie diese nach Nutzerbetroffenheit ein</li>
+        <li>Bewerten Sie Geschäftsauswirkung und Management-Priorität</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="trust">
+    Wenn diese Übung bereits Klarheit schafft, liegt das Defizit oft nicht in der Technik —
+    sondern in der fehlenden Steuerungslogik.
+  </div>
+
+  <div class="footer">© CK7 #KnowYourIT</div>
+
+</div>
 </body>
 </html>
