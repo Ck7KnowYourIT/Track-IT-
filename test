@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track-IT | CK7</title>
+
+<style>
+
+:root{
+--bg:#f5f7fa;
+--card:#ffffff;
+--border:#e5e7eb;
+--text:#0f172a;
+--muted:#475569;
+--accent:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
+
+/* NAVBAR */
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:50px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:var(--text);
+font-weight:700;
+}
+
+.brand img{
+height:30px;
+}
+
+.navlinks{
+display:flex;
+gap:20px;
+}
+
+.navlinks a{
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+max-width:760px;
+margin-bottom:60px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+color:var(--muted);
+line-height:1.6;
+}
+
+.cta{
+margin-top:25px;
+}
+
+.cta a{
+display:inline-block;
+background:var(--accent);
+color:white;
+padding:14px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:700;
+}
+
+/* SECTION */
+
+.sectiontitle{
+font-size:18px;
+margin-bottom:20px;
+color:var(--muted);
+font-weight:700;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-bottom:50px;
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:10px;
+padding:24px;
+}
+
+.card h3{
+margin-top:0;
+margin-bottom:10px;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.6;
+}
+
+.card .btn{
+margin-top:15px;
+display:inline-block;
+background:var(--accent);
+color:white;
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+}
+
+/* STEPS */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+margin-bottom:50px;
+}
+
+.step{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:10px;
+padding:20px;
+}
+
+.step b{
+display:block;
+margin-bottom:5px;
+}
+
+/* TRUST */
+
+.trust{
+border:1px solid var(--border);
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+color:var(--muted);
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:60px;
+font-size:13px;
+color:#64748b;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAV -->
+
+<div class="nav">
+
+<a class="brand" href="#">
+<img src="CK7Logo.png">
+<span>CK7 #KnowYourIT</span>
+</a>
+
+<div class="navlinks">
+<a href="https://ck7.de/unternehmen" target="_blank">Über CK7</a>
+<a href="https://ck7.de" target="_blank">Website besuchen</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>Track-IT: IT-Störungen nachvollziehbar priorisieren</h1>
+
+<p>
+Viele IT-Organisationen haben Tickets, Störungen und Eskalationen –
+aber keine einheitliche Priorisierung.
+Track-IT bringt Struktur über Business-Impact,
+Dringlichkeit und Nutzerbetroffenheit.
+</p>
+
+<div class="cta">
+<a href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">
+Freebie öffnen
+</a>
+</div>
+
+</div>
+
+<!-- RESOURCES -->
+
+<div class="sectiontitle">
+So starten Sie mit mehr Transparenz in Ihrer IT
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Track-IT Freebie</h3>
+<p>
+Der Einstieg in das Framework:
+Warum IT-Störungen oft nicht steuerbar wirken
+und wie Priorisierung wieder Klarheit schafft.
+</p>
+<a class="btn" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">
+Freebie öffnen
+</a>
+</div>
+
+<div class="card">
+<h3>Kritikalitätsmatrix</h3>
+<p>
+Ein einfaches Werkzeug, um Störungen nach
+Business-Impact und Dringlichkeit
+systematisch einzuordnen.
+</p>
+<a class="btn" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank">
+Matrix öffnen
+</a>
+</div>
+
+<div class="card">
+<h3>Transparenz-Check</h3>
+<p>
+30 Minuten zur Einordnung Ihrer aktuellen Situation –
+ohne Verkaufsgespräch.
+</p>
+<a class="btn"
+href="https://outlook.office.com/book/ck7knowyourit@ck7.de/?ismsaljsauthenabled=true"
+target="_blank">
+Termin buchen
+</a>
+</div>
+
+</div>
+
+<!-- PROCESS -->
+
+<div class="sectiontitle">
+So funktioniert Track-IT in der Praxis
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>1) Einordnen</b>
+Störungen strukturiert erfassen und bewerten.
+</div>
+
+<div class="step">
+<b>2) Priorisieren</b>
+Business-Impact + Dringlichkeit bestimmen
+die Reihenfolge.
+</div>
+
+<div class="step">
+<b>3) Kommunizieren</b>
+Transparenz für Management und Fachbereiche.
+</div>
+
+</div>
+
+<div class="trust">
+Praxisnah entwickelt aus realen IT-Service-Situationen.
+</div>
+
+<div class="footer">
+© CK7 #KnowYourIT
+</div>
+
+</div>
+
+</body>
+</html>
