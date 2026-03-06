@@ -18,6 +18,7 @@
       --radius:18px;
       --cta:#0f172a;
       --ctaText:#ffffff;
+      --soft:rgba(255,255,255,.72);
     }
 
     *{box-sizing:border-box}
@@ -34,10 +35,9 @@
 
     .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
-    /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.72);
+      background:var(--soft);
       backdrop-filter: blur(10px);
       border:1px solid rgba(15,23,42,.10);
       border-radius:999px;
@@ -51,9 +51,11 @@
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
       background:rgba(15,23,42,.03);
+      text-decoration:none;
+      color:var(--text);
     }
     .brandLogo{
-      height:26px;
+      height:28px;
       width:auto;
       display:block;
     }
@@ -65,7 +67,7 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.50);
+      background:rgba(255,255,255,.55);
       color:var(--text);
       text-decoration:none;
       font-weight:650;
@@ -74,12 +76,7 @@
       white-space:nowrap;
     }
     .tab:hover{background:rgba(15,23,42,.04)}
-    .tab.active{
-      background:rgba(15,23,42,.10);
-      border-color:rgba(15,23,42,.16);
-    }
 
-    /* Layout */
     .grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -92,7 +89,7 @@
     }
 
     .card{
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.78);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       padding:22px;
@@ -105,42 +102,92 @@
       line-height:1.05;
       letter-spacing:-.3px;
     }
-    .hero p{margin:0 0 18px 0; color:var(--muted); font-size:16px; line-height:1.5}
+    .hero p{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.5;
+    }
 
-    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px 0}
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:14px 0 18px 0;
+    }
     .pill{
       padding:8px 10px;
       border-radius:999px;
       border:1px solid rgba(15,23,42,.10);
       color:var(--muted);
-      background:rgba(255,255,255,.7);
+      background:rgba(255,255,255,.75);
       font-size:13px;
-      display:inline-flex; gap:8px; align-items:center;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
     }
 
-    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:10px;
+    }
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:12px;
-      font-weight:900;text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:900;
+      text-decoration:none;
       border:1px solid rgba(15,23,42,.10);
       transition:.15s ease;
       white-space:nowrap;
     }
+
     .btn.primary{
       background:var(--cta);
       color:var(--ctaText);
       border-color:transparent;
       box-shadow:0 12px 28px rgba(2,6,23,.18);
     }
-    .btn.primary:hover{transform:translateY(-1px); filter:brightness(.98)}
-    .btn.ghost{background:rgba(255,255,255,.7);color:var(--text)}
-    .btn.ghost:hover{background:rgba(15,23,42,.04)}
 
-    .mini{margin-top:14px;color:var(--muted2);font-size:13px;line-height:1.45}
+    .btn.primary:hover{
+      transform:translateY(-1px);
+      filter:brightness(.98);
+    }
 
-    .side h3{margin:0 0 10px 0;font-size:16px}
-    .side ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
+    .btn.ghost{
+      background:rgba(255,255,255,.78);
+      color:var(--text);
+    }
+
+    .btn.ghost:hover{
+      background:rgba(15,23,42,.04);
+    }
+
+    .mini{
+      margin-top:14px;
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.45
+    }
+
+    .side h3{
+      margin:0 0 10px 0;
+      font-size:16px;
+    }
+
+    .side ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
     .side .box{
       margin-top:14px;
       padding:14px;
@@ -148,7 +195,11 @@
       border:1px solid rgba(15,23,42,.10);
       background:rgba(15,23,42,.03);
     }
-    .side .box b{display:block;margin-bottom:6px}
+
+    .side .box b{
+      display:block;
+      margin-bottom:6px;
+    }
 
     .footer{
       margin:22px 0 10px 0;
@@ -161,20 +212,18 @@
 
 <body>
   <div class="wrap">
+
     <div class="topbar">
       <div class="nav">
-        <div class="brand">
-          <img class="brandLogo" src="CK7Logo.png" alt="CK7 Logo">
+        <a class="brand" href="./index.html">
+          <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
           <b>#KnowYourIT</b>
-        </div>
+        </a>
 
         <div class="spacer"></div>
 
-        <a class="tab" href="./index.html">Start</a>
-        <a class="tab active" href="./freebie.html">Freebie</a>
-        <a class="tab" href="./Kritikalitätsmatrix.html">Matrix</a>
-        <a class="tab" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">PDF</a>
-        <a class="tab" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">Termin buchen</a>
+        <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
+        <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
       </div>
     </div>
 
@@ -194,18 +243,18 @@
 
         <div class="ctaRow">
           <a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">
-            📄 Freebie als PDF öffnen
+            Freebie öffnen
           </a>
           <a class="btn ghost" href="./Kritikalitätsmatrix.html">
-            🧩 Zur Kritikalitäts-Matrix
+            Kritikalitätsmatrix
           </a>
-          <a class="btn ghost" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">
-            📅 Transparenz-Check buchen
+          <a class="btn ghost" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">
+            Termin buchen
           </a>
         </div>
 
         <div class="mini">
-          Tipp: Für eure Kampagnen nutzt ihr als Link/QR am besten <b>/freebie.html</b> statt direkt das PDF.
+          Tipp: Für Kampagnen und QR-Codes ist <b>/freebie.html</b> der sinnvollste Einstieg statt direkt das PDF zu verlinken.
         </div>
       </div>
 
@@ -223,8 +272,8 @@
         </div>
 
         <div class="ctaRow" style="margin-top:14px">
-          <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/" target="_blank" rel="noopener">
-            📅 Termin buchen
+          <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">
+            Termin buchen
           </a>
         </div>
       </div>
