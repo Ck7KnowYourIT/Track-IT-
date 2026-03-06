@@ -11,19 +11,18 @@
       --ck7-blue-dark:#0f5f84;
       --ck7-orange:#F07A19;
       --ck7-orange-dark:#d9680f;
+      --ck7-orange-soft:#fff2e8;
 
-      --bg1:#f6f8fa;
-      --bg2:#eef3f6;
+      --bg1:#f7f8fa;
+      --bg2:#eef2f5;
       --card:#ffffff;
       --stroke:rgba(15,23,42,.10);
       --text:#0f172a;
       --muted:rgba(15,23,42,.72);
       --muted2:rgba(15,23,42,.55);
-      --shadow:0 8px 24px rgba(15,23,42,.08);
+      --shadow:0 10px 28px rgba(15,23,42,.08);
       --radius:14px;
-      --cta:var(--ck7-orange);
-      --ctaText:#ffffff;
-      --soft:rgba(255,255,255,.90);
+      --soft:rgba(255,255,255,.92);
     }
 
     *{box-sizing:border-box}
@@ -33,8 +32,6 @@
       font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(700px 420px at 10% 8%, rgba(20,120,166,.10), transparent 60%),
-        radial-gradient(720px 420px at 88% 10%, rgba(240,122,25,.10), transparent 58%),
         linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
       min-height:100vh;
     }
@@ -54,7 +51,7 @@
       border:1px solid rgba(15,23,42,.08);
       border-radius:999px;
       padding:10px 12px;
-      box-shadow:0 6px 18px rgba(15,23,42,.06);
+      box-shadow:0 6px 18px rgba(15,23,42,.05);
     }
 
     .nav{
@@ -86,9 +83,7 @@
       letter-spacing:.2px;
     }
 
-    .spacer{
-      flex:1;
-    }
+    .spacer{flex:1}
 
     .tab{
       display:inline-flex;
@@ -97,7 +92,7 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(20,120,166,.14);
-      background:rgba(255,255,255,.88);
+      background:#ffffff;
       color:var(--text);
       text-decoration:none;
       font-weight:650;
@@ -107,33 +102,47 @@
     }
 
     .tab:hover{
-      background:rgba(20,120,166,.06);
+      background:rgba(20,120,166,.05);
       border-color:rgba(20,120,166,.22);
     }
 
     .hero{
       margin-top:18px;
-      background:rgba(255,255,255,.94);
-      border:1px solid rgba(20,120,166,.10);
+      background:
+        linear-gradient(135deg, rgba(20,120,166,.08) 0%, rgba(240,122,25,.09) 100%),
+        #ffffff;
+      border:1px solid rgba(20,120,166,.12);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:32px;
+      padding:34px;
       position:relative;
       overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      left:-80px;
+      top:-80px;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(20,120,166,.14) 0%, transparent 68%);
+      pointer-events:none;
     }
 
     .hero::after{
       content:"";
       position:absolute;
-      right:-80px;
-      top:-80px;
-      width:220px;
-      height:220px;
-      background:radial-gradient(circle, rgba(240,122,25,.10) 0%, transparent 65%);
+      right:-90px;
+      bottom:-90px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(240,122,25,.14) 0%, transparent 70%);
       pointer-events:none;
     }
 
     .hero h1{
+      position:relative;
       margin:0 0 12px 0;
       font-size:44px;
       line-height:1.05;
@@ -142,6 +151,7 @@
     }
 
     .hero p{
+      position:relative;
       margin:0 0 18px 0;
       color:var(--muted);
       font-size:18px;
@@ -150,6 +160,7 @@
     }
 
     .pillrow{
+      position:relative;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -160,8 +171,8 @@
       padding:8px 10px;
       border-radius:999px;
       border:1px solid rgba(20,120,166,.14);
-      color:var(--muted);
-      background:rgba(20,120,166,.04);
+      color:var(--text);
+      background:rgba(255,255,255,.8);
       font-size:13px;
       display:inline-flex;
       gap:8px;
@@ -199,6 +210,12 @@
       flex-direction:column;
       justify-content:space-between;
       min-height:280px;
+      transition:.15s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 28px rgba(15,23,42,.08);
     }
 
     .badge{
@@ -207,9 +224,9 @@
       gap:8px;
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(20,120,166,.16);
-      background:rgba(20,120,166,.05);
-      color:var(--ck7-blue-dark);
+      border:1px solid rgba(240,122,25,.18);
+      background:var(--ck7-orange-soft);
+      color:var(--ck7-orange-dark);
       font-size:12px;
       font-weight:800;
       margin-bottom:10px;
@@ -251,8 +268,8 @@
     }
 
     .btn.primary{
-      background:var(--cta);
-      color:var(--ctaText);
+      background:var(--ck7-orange);
+      color:#ffffff;
       border-color:transparent;
       box-shadow:0 10px 24px rgba(240,122,25,.24);
     }
@@ -264,13 +281,13 @@
 
     .btn.ghost{
       background:#ffffff;
-      color:var(--text);
-      border:1px solid rgba(20,120,166,.14);
+      color:var(--ck7-blue-dark);
+      border:1px solid rgba(20,120,166,.16);
     }
 
     .btn.ghost:hover{
       background:rgba(20,120,166,.04);
-      border-color:rgba(20,120,166,.22);
+      border-color:rgba(20,120,166,.24);
     }
 
     .steps{
@@ -281,7 +298,7 @@
     }
 
     .step{
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       border:1px solid rgba(15,23,42,.08);
       border-radius:var(--radius);
       padding:20px;
@@ -304,8 +321,9 @@
     .quote{
       margin-top:18px;
       padding:20px;
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       border:1px solid rgba(15,23,42,.08);
+      border-left:4px solid var(--ck7-orange);
       border-radius:12px;
       color:var(--muted);
       font-size:15px;
@@ -321,7 +339,7 @@
 
     .selfcheck{
       margin-top:18px;
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       border:1px solid rgba(15,23,42,.08);
       border-radius:12px;
       padding:22px;
@@ -337,14 +355,15 @@
 
     .trust{
       margin-top:20px;
-      padding:16px 18px;
-      background:linear-gradient(90deg, rgba(20,120,166,.06), rgba(240,122,25,.06));
-      border:1px solid rgba(20,120,166,.10);
+      padding:18px;
+      background:linear-gradient(90deg, rgba(20,120,166,.08), rgba(240,122,25,.08));
+      border:1px solid rgba(240,122,25,.14);
       border-radius:12px;
-      color:var(--muted);
+      color:var(--text);
       font-size:14px;
       line-height:1.6;
       text-align:center;
+      font-weight:600;
     }
 
     .footer{
