@@ -40,7 +40,6 @@
       padding:22px;
     }
 
-    /* Topbar */
     .topbar{
       position:sticky;
       top:0;
@@ -106,7 +105,6 @@
       background:rgba(15,23,42,.04);
     }
 
-    /* Hero */
     .hero{
       margin-top:18px;
       background:rgba(255,255,255,.70);
@@ -116,17 +114,6 @@
       padding:34px;
       overflow:hidden;
       position:relative;
-    }
-
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto auto;
-      width:260px;
-      height:260px;
-      background:radial-gradient(circle at 30% 30%, rgba(99,102,241,.18), transparent 60%);
-      border-radius:999px;
-      pointer-events:none;
     }
 
     .hero h1{
@@ -184,35 +171,6 @@
       border-radius:var(--radius);
       box-shadow:0 10px 26px rgba(2,6,23,.08);
       padding:18px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .card .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(15,23,42,.03);
-      color:var(--muted);
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .card h3{
-      margin:0 0 8px 0;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
-
-    .card p{
-      margin:0 0 14px 0;
-      color:var(--muted);
-      line-height:1.55;
-      font-size:14px;
     }
 
     .btnRow{
@@ -226,7 +184,6 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
       padding:12px 14px;
       border-radius:12px;
       font-weight:900;
@@ -253,10 +210,6 @@
       color:var(--text);
     }
 
-    .btn.ghost:hover{
-      background:rgba(15,23,42,.04);
-    }
-
     .steps{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
@@ -268,19 +221,7 @@
       background:rgba(255,255,255,.70);
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      box-shadow:0 10px 26px rgba(2,6,23,.06);
       padding:18px;
-    }
-
-    .step b{
-      display:block;
-      margin-bottom:6px;
-    }
-
-    .step span{
-      color:var(--muted);
-      line-height:1.55;
-      font-size:14px;
     }
 
     .trust{
@@ -289,11 +230,7 @@
       background:rgba(255,255,255,.68);
       border:1px solid var(--stroke);
       border-radius:14px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
       text-align:center;
-      box-shadow:0 10px 20px rgba(2,6,23,.05);
     }
 
     .footer{
@@ -308,110 +245,41 @@
       .grid,.steps{grid-template-columns:1fr}
       .hero h1{font-size:36px}
     }
+
+    /* MOBILE FEINSCHLIFF */
+    @media (max-width:600px){
+
+      .wrap{
+        padding:14px;
+      }
+
+      .hero{
+        padding:22px;
+      }
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .card,
+      .step{
+        padding:20px;
+      }
+
+      .brandLogo{
+        height:24px;
+      }
+
+      .tab{
+        font-size:13px;
+        padding:9px 11px;
+      }
+
+    }
+
   </style>
 </head>
-
-<body>
-  <div class="wrap">
-
-    <!-- TOP NAV -->
-    <div class="topbar">
-      <div class="nav">
-        <a class="brand" href="./index.html">
-          <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
-          <b>#KnowYourIT</b>
-        </a>
-
-        <div class="spacer"></div>
-
-        <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
-        <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
-      </div>
-    </div>
-
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Track-IT: Störungen endlich steuerbar machen</h1>
-      <p>
-        Viele IT-Organisationen haben Tickets, Störungen und Eskalationen – aber keine einheitliche Priorisierung.
-        Track-IT bringt Struktur über <b>Business-Impact</b>, <b>Dringlichkeit</b> und <b>Nutzerbetroffenheit</b> – nachvollziehbar und pragmatisch.
-      </p>
-
-      <div class="pillrow">
-        <div class="pill">✅ Kostenloses Freebie</div>
-        <div class="pill">🧩 Kritikalitätsmatrix</div>
-        <div class="pill">⏱️ 30-Minuten Transparenz-Check</div>
-      </div>
-    </section>
-
-    <!-- CTA LANDING -->
-    <div class="sectionTitle">Wähle, was du brauchst</div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="badge">Freebie</div>
-        <h3>PDF: Von 50+ Störungen zu klarer Steuerbarkeit</h3>
-        <p>
-          Sofort nutzbares Material, um IT-Störungen strukturiert einzuordnen und eine Priorisierung zu starten –
-          ohne Toolwechsel, ohne Setup.
-        </p>
-        <div class="btnRow">
-          <a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">Freebie öffnen</a>
-          <a class="btn ghost" href="./freebie.html">Details</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="badge">Kritikalitätsmatrix</div>
-        <h3>Bewertungsmatrix für Business-Impact & Dringlichkeit</h3>
-        <p>
-          Eine einfache Matrix zur systematischen Einordnung von Störungen – ideal als Grundlage für Service-Teams,
-          IT-Leitung und Management-Kommunikation.
-        </p>
-        <div class="btnRow">
-          <a class="btn primary" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">Matrix öffnen</a>
-          <a class="btn ghost" href="./Kritikalitätsmatrix.html">Details</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="badge">Transparenz-Check</div>
-        <h3>30 Minuten: eure aktuelle Situation sortieren</h3>
-        <p>
-          Kurzer Termin ohne Verkaufsgespräch: Wir schauen gemeinsam auf eure größten Schmerzpunkte und was
-          euch am schnellsten Transparenz bringt.
-        </p>
-        <div class="btnRow">
-          <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Termin buchen</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div class="sectionTitle">So funktioniert’s in der Praxis</div>
-
-    <div class="steps">
-      <div class="step">
-        <b>1) Einordnen</b>
-        <span>Störungen strukturiert erfassen und einheitlich bewerten – statt „Gefühl“ und Ad-hoc-Eskalationen.</span>
-      </div>
-
-      <div class="step">
-        <b>2) Priorisieren</b>
-        <span>Business-Impact + Dringlichkeit + Nutzerbetroffenheit → klare Reihenfolge für Abarbeitung.</span>
-      </div>
-
-      <div class="step">
-        <b>3) Kommunizieren</b>
-        <span>Transparenz für Fachbereich & Management: warum etwas Priorität hat – und was als Nächstes passiert.</span>
-      </div>
-    </div>
-
-    <div class="trust">
-      Praxisnah entwickelt aus realen IT-Service-Situationen – für mehr Transparenz, bessere Priorisierung und nachvollziehbare Kommunikation.
-    </div>
-
-    <div class="footer">© CK7 #KnowYourIT</div>
-  </div>
-</body>
-</html>
