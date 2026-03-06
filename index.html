@@ -6,433 +6,431 @@
 <title>Track-IT | CK7 #KnowYourIT</title>
 
 <style>
-
 :root{
---bg1:#f8fafc;
---bg2:#eef2ff;
---card:#ffffff;
---stroke:rgba(15,23,42,.10);
---text:#0f172a;
---muted:rgba(15,23,42,.70);
---muted2:rgba(15,23,42,.55);
---shadow:0 18px 45px rgba(2,6,23,.12);
---radius:18px;
---cta:#0f172a;
---ctaText:#ffffff;
---soft:rgba(255,255,255,.72);
+  --bg1:#f8fafc;
+  --bg2:#eef2ff;
+  --card:#ffffff;
+  --stroke:rgba(15,23,42,.10);
+  --text:#0f172a;
+  --muted:rgba(15,23,42,.70);
+  --muted2:rgba(15,23,42,.55);
+  --shadow:0 18px 45px rgba(2,6,23,.12);
+  --radius:18px;
+  --cta:#0f172a;
+  --ctaText:#ffffff;
+  --soft:rgba(255,255,255,.72);
 }
 
 *{box-sizing:border-box}
 
 body{
-margin:0;
-font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-color:var(--text);
-background:
-radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
-radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-min-height:100vh;
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.18), transparent 60%),
+    radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.12), transparent 55%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  min-height:100vh;
 }
 
 .wrap{
-max-width:1100px;
-margin:0 auto;
-padding:22px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:22px;
 }
 
-/* Topbar */
-
 .topbar{
-position:sticky;
-top:0;
-z-index:20;
-background:var(--soft);
-backdrop-filter:blur(10px);
-border:1px solid rgba(15,23,42,.10);
-border-radius:999px;
-padding:10px 12px;
-box-shadow:0 10px 26px rgba(2,6,23,.10);
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--soft);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:999px;
+  padding:10px 12px;
+  box-shadow:0 10px 26px rgba(2,6,23,.10);
 }
 
 .nav{
-display:flex;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:10px;
-padding:6px 10px;
-border-radius:999px;
-border:1px solid rgba(15,23,42,.10);
-background:rgba(15,23,42,.03);
-text-decoration:none;
-color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:rgba(15,23,42,.03);
+  text-decoration:none;
+  color:var(--text);
 }
 
 .brandLogo{
-height:28px;
-width:auto;
-display:block;
+  height:28px;
+  width:auto;
+  display:block;
 }
 
 .brand b{
-letter-spacing:.2px;
+  letter-spacing:.2px;
 }
 
 .spacer{
-flex:1;
+  flex:1;
 }
 
 .tab{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:10px 12px;
-border-radius:999px;
-border:1px solid rgba(15,23,42,.10);
-background:rgba(255,255,255,.55);
-color:var(--text);
-text-decoration:none;
-font-weight:650;
-font-size:14px;
-transition:.15s ease;
-white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:rgba(255,255,255,.55);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:650;
+  font-size:14px;
+  transition:.15s ease;
+  white-space:nowrap;
 }
 
 .tab:hover{
-background:rgba(15,23,42,.04);
+  background:rgba(15,23,42,.04);
 }
 
-/* Hero */
-
 .hero{
-margin-top:18px;
-background:rgba(255,255,255,.70);
-border:1px solid var(--stroke);
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-padding:30px;
+  margin-top:18px;
+  background:rgba(255,255,255,.70);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:30px;
 }
 
 .hero h1{
-margin:0 0 10px 0;
-font-size:44px;
-line-height:1.05;
-letter-spacing:-.6px;
+  margin:0 0 10px 0;
+  font-size:44px;
+  line-height:1.05;
+  letter-spacing:-.6px;
 }
 
 .hero p{
-margin:0 0 18px 0;
-color:var(--muted);
-font-size:17px;
-line-height:1.55;
-max-width:860px;
+  margin:0 0 18px 0;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.55;
+  max-width:860px;
 }
 
 .pillrow{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
 }
 
 .pill{
-padding:8px 10px;
-border-radius:999px;
-border:1px solid rgba(15,23,42,.10);
-color:var(--muted);
-background:rgba(255,255,255,.75);
-font-size:13px;
-display:inline-flex;
-gap:8px;
-align-items:center;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  color:var(--muted);
+  background:rgba(255,255,255,.75);
+  font-size:13px;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
 }
-
-/* SECTION TITLE */
 
 .sectionTitle{
-margin:26px 0 14px 0;
-font-size:18px;
-color:var(--text);
-font-weight:800;
+  margin:26px 0 14px 0;
+  font-size:18px;
+  color:var(--text);
+  font-weight:800;
 }
-
-/* GRID */
 
 .grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:16px;
 }
 
-/* CARD */
-
 .card{
-background:rgba(255,255,255,.80);
-border:1px solid var(--stroke);
-border-radius:var(--radius);
-box-shadow:0 10px 26px rgba(2,6,23,.08);
-padding:22px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-min-height:250px;
+  background:rgba(255,255,255,.80);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  box-shadow:0 10px 26px rgba(2,6,23,.08);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:250px;
 }
 
 .badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:6px 10px;
-border-radius:999px;
-border:1px solid rgba(15,23,42,.10);
-background:rgba(15,23,42,.03);
-color:var(--muted);
-font-size:12px;
-font-weight:800;
-margin-bottom:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:rgba(15,23,42,.03);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:10px;
 }
 
 .card h3{
-margin:0 0 10px 0;
-font-size:18px;
+  margin:0 0 10px 0;
+  font-size:18px;
 }
 
 .card p{
-margin:0;
-color:var(--muted);
-line-height:1.55;
-font-size:14px;
-flex-grow:1;
+  margin:0;
+  color:var(--muted);
+  line-height:1.55;
+  font-size:14px;
+  flex-grow:1;
 }
 
 .btnRow{
-display:flex;
-gap:10px;
-margin-top:20px;
+  display:flex;
+  gap:10px;
+  margin-top:20px;
 }
 
-/* BUTTONS */
-
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:12px 16px;
-border-radius:12px;
-font-weight:900;
-text-decoration:none;
-border:1px solid rgba(15,23,42,.10);
-transition:.15s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid rgba(15,23,42,.10);
+  transition:.15s ease;
 }
 
 .btn.primary{
-background:var(--cta);
-color:var(--ctaText);
-border-color:transparent;
-box-shadow:0 12px 28px rgba(2,6,23,.18);
+  background:var(--cta);
+  color:var(--ctaText);
+  border-color:transparent;
+  box-shadow:0 12px 28px rgba(2,6,23,.18);
 }
 
 .btn.primary:hover{
-transform:translateY(-1px);
+  transform:translateY(-1px);
 }
 
 .btn.ghost{
-background:rgba(255,255,255,.78);
-color:var(--text);
+  background:rgba(255,255,255,.78);
+  color:var(--text);
 }
 
 .steps{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:14px;
-margin-top:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:14px;
+  margin-top:16px;
 }
 
 .step{
-background:rgba(255,255,255,.70);
-border:1px solid var(--stroke);
-border-radius:var(--radius);
-padding:18px;
+  background:rgba(255,255,255,.70);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:18px;
 }
 
 .step b{
-display:block;
-margin-bottom:6px;
+  display:block;
+  margin-bottom:6px;
 }
 
 .step span{
-color:var(--muted);
-line-height:1.55;
-font-size:14px;
+  color:var(--muted);
+  line-height:1.55;
+  font-size:14px;
 }
 
 .trust{
-margin-top:20px;
-padding:16px 18px;
-background:rgba(255,255,255,.68);
-border:1px solid var(--stroke);
-border-radius:14px;
-color:var(--muted);
-font-size:14px;
-line-height:1.5;
-text-align:center;
+  margin-top:20px;
+  padding:16px 18px;
+  background:rgba(255,255,255,.68);
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+  text-align:center;
 }
 
 .footer{
-margin:26px 0 12px 0;
-color:var(--muted2);
-font-size:12px;
-text-align:center;
+  margin:26px 0 12px 0;
+  color:var(--muted2);
+  font-size:12px;
+  text-align:center;
 }
-
-/* MOBILE */
 
 @media (max-width:980px){
-.spacer{display:none}
-.grid,.steps{grid-template-columns:1fr}
-.hero h1{font-size:36px}
+  .spacer{display:none}
+  .grid,.steps{grid-template-columns:1fr}
+  .hero h1{font-size:36px}
 }
 
+@media (max-width:600px){
+  .wrap{
+    padding:14px;
+  }
+
+  .hero{
+    padding:22px;
+  }
+
+  .hero h1{
+    font-size:30px;
+    line-height:1.12;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .card,
+  .step{
+    padding:20px;
+  }
+
+  .brandLogo{
+    height:24px;
+  }
+
+  .tab{
+    font-size:13px;
+    padding:9px 11px;
+  }
+}
 </style>
 </head>
 
 <body>
-
 <div class="wrap">
 
-<div class="topbar">
-<div class="nav">
+  <div class="topbar">
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
+        <b>#KnowYourIT</b>
+      </a>
 
-<a class="brand" href="./index.html">
-<img src="CK7Logo.png" alt="CK7 Logo" class="brandLogo">
-<b>#KnowYourIT</b>
-</a>
+      <div class="spacer"></div>
 
-<div class="spacer"></div>
+      <a class="tab" href="https://ck7.de/unternehmen" target="_blank" rel="noopener">Über CK7</a>
+      <a class="tab" href="https://ck7.de/" target="_blank" rel="noopener">Website besuchen</a>
+    </div>
+  </div>
 
-<a class="tab" href="https://ck7.de/unternehmen" target="_blank">Über CK7</a>
-<a class="tab" href="https://ck7.de/" target="_blank">Website besuchen</a>
+  <section class="hero">
+    <h1>Track-IT: Störungen endlich steuerbar machen</h1>
 
-</div>
-</div>
+    <p>
+      Viele IT-Organisationen haben Tickets, Störungen und Eskalationen – aber keine einheitliche Priorisierung.
+      Track-IT bringt Struktur über <b>Business-Impact</b>, <b>Dringlichkeit</b> und <b>Nutzerbetroffenheit</b> – nachvollziehbar und pragmatisch.
+    </p>
 
-<section class="hero">
+    <div class="pillrow">
+      <div class="pill">📄 Kostenloses Freebie</div>
+      <div class="pill">📊 Kritikalitätsmatrix</div>
+      <div class="pill">📅 30-Minuten Transparenz-Check</div>
+    </div>
+  </section>
 
-<h1>Track-IT: Störungen endlich steuerbar machen</h1>
+  <div class="sectionTitle">So starten Sie mit mehr Transparenz in Ihrer IT</div>
 
-<p>
-Viele IT-Organisationen haben Tickets, Störungen und Eskalationen – aber keine einheitliche Priorisierung.
-Track-IT bringt Struktur über <b>Business-Impact</b>, <b>Dringlichkeit</b> und <b>Nutzerbetroffenheit</b> – nachvollziehbar und pragmatisch.
-</p>
+  <div class="grid">
 
-<div class="pillrow">
-<div class="pill">📄 Kostenloses Freebie</div>
-<div class="pill">📊 Kritikalitätsmatrix</div>
-<div class="pill">📅 30-Minuten Transparenz-Check</div>
-</div>
+    <div class="card">
+      <div>
+        <div class="badge">Freebie</div>
+        <h3>PDF: Von 50+ Störungen zu klarer Steuerbarkeit</h3>
+        <p>
+          Sofort nutzbares Material, um IT-Störungen strukturiert einzuordnen
+          und eine Priorisierung zu starten – ohne Toolwechsel, ohne Setup.
+        </p>
+      </div>
 
-</section>
+      <div class="btnRow">
+        <a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank" rel="noopener">Freebie öffnen</a>
+        <a class="btn ghost" href="./freebie.html">Details</a>
+      </div>
+    </div>
 
-<div class="sectionTitle">
-So starten Sie mit mehr Transparenz in Ihrer IT
-</div>
+    <div class="card">
+      <div>
+        <div class="badge">Kritikalitätsmatrix</div>
+        <h3>Bewertungsmatrix für Business-Impact & Dringlichkeit</h3>
+        <p>
+          Eine einfache Matrix zur systematischen Einordnung von Störungen –
+          ideal als Grundlage für Service-Teams, IT-Leitung und Management-Kommunikation.
+        </p>
+      </div>
 
-<div class="grid">
+      <div class="btnRow">
+        <a class="btn primary" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank" rel="noopener">Matrix öffnen</a>
+        <a class="btn ghost" href="./Kritikalitätsmatrix.html">Details</a>
+      </div>
+    </div>
 
-<div class="card">
+    <div class="card">
+      <div>
+        <div class="badge">Transparenz-Check</div>
+        <h3>30 Minuten: eure aktuelle Situation sortieren</h3>
+        <p>
+          Kurzer Termin ohne Verkaufsgespräch:
+          Wir schauen gemeinsam auf eure größten Schmerzpunkte
+          und was euch am schnellsten Transparenz bringt.
+        </p>
+      </div>
 
-<div>
-<div class="badge">Freebie</div>
-<h3>PDF: Von 50+ Störungen zu klarer Steuerbarkeit</h3>
+      <div class="btnRow">
+        <a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank" rel="noopener">Termin buchen</a>
+      </div>
+    </div>
 
-<p>
-Sofort nutzbares Material, um IT-Störungen strukturiert einzuordnen
-und eine Priorisierung zu starten – ohne Toolwechsel, ohne Setup.
-</p>
-</div>
+  </div>
 
-<div class="btnRow">
-<a class="btn primary" href="Freebie%20-%20TrackIt!%20V3.pdf" target="_blank">Freebie öffnen</a>
-<a class="btn ghost" href="./freebie.html">Details</a>
-</div>
+  <div class="sectionTitle">So funktioniert’s in der Praxis</div>
 
-</div>
+  <div class="steps">
+    <div class="step">
+      <b>1) Einordnen</b>
+      <span>Störungen strukturiert erfassen und einheitlich bewerten – statt „Gefühl“ und Ad-hoc-Eskalationen.</span>
+    </div>
 
-<div class="card">
+    <div class="step">
+      <b>2) Priorisieren</b>
+      <span>Business-Impact + Dringlichkeit + Nutzerbetroffenheit → klare Reihenfolge für Abarbeitung.</span>
+    </div>
 
-<div>
-<div class="badge">Kritikalitätsmatrix</div>
-<h3>Bewertungsmatrix für Business-Impact & Dringlichkeit</h3>
+    <div class="step">
+      <b>3) Kommunizieren</b>
+      <span>Transparenz für Fachbereich &amp; Management: warum etwas Priorität hat – und was als Nächstes passiert.</span>
+    </div>
+  </div>
 
-<p>
-Eine einfache Matrix zur systematischen Einordnung von Störungen –
-ideal als Grundlage für Service-Teams, IT-Leitung und Management-Kommunikation.
-</p>
-</div>
+  <div class="trust">
+    Praxisnah entwickelt aus realen IT-Service-Situationen – für mehr Transparenz,
+    bessere Priorisierung und nachvollziehbare Kommunikation.
+  </div>
 
-<div class="btnRow">
-<a class="btn primary" href="Kritikalitäts_Matrix_ck7_TrackIT.pdf" target="_blank">Matrix öffnen</a>
-<a class="btn ghost" href="./Kritikalitätsmatrix.html">Details</a>
-</div>
-
-</div>
-
-<div class="card">
-
-<div>
-<div class="badge">Transparenz-Check</div>
-<h3>30 Minuten: eure aktuelle Situation sortieren</h3>
-
-<p>
-Kurzer Termin ohne Verkaufsgespräch:
-Wir schauen gemeinsam auf eure größten Schmerzpunkte
-und was euch am schnellsten Transparenz bringt.
-</p>
-</div>
-
-<div class="btnRow">
-<a class="btn primary" href="https://outlook.office.com/book/Ck7KnowYourIT@ck7.de/?ismsaljsauthenabled=true" target="_blank">Termin buchen</a>
-</div>
-
-</div>
-
-</div>
-
-<div class="sectionTitle">So funktioniert’s in der Praxis</div>
-
-<div class="steps">
-
-<div class="step">
-<b>1) Einordnen</b>
-<span>Störungen strukturiert erfassen und einheitlich bewerten – statt „Gefühl“ und Ad-hoc-Eskalationen.</span>
-</div>
-
-<div class="step">
-<b>2) Priorisieren</b>
-<span>Business-Impact + Dringlichkeit + Nutzerbetroffenheit → klare Reihenfolge für Abarbeitung.</span>
-</div>
-
-<div class="step">
-<b>3) Kommunizieren</b>
-<span>Transparenz für Fachbereich & Management: warum etwas Priorität hat – und was als Nächstes passiert.</span>
-</div>
+  <div class="footer">© CK7 #KnowYourIT</div>
 
 </div>
-
-<div class="trust">
-Praxisnah entwickelt aus realen IT-Service-Situationen – für mehr Transparenz,
-bessere Priorisierung und nachvollziehbare Kommunikation.
-</div>
-
-<div class="footer">© CK7 #KnowYourIT</div>
-
-</div>
-
 </body>
 </html>
